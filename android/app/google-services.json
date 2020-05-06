@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "186928629709",
+    "firebase_url": "https://mansamusa-339c9.firebaseio.com",
+    "project_id": "mansamusa-339c9",
+    "storage_bucket": "mansamusa-339c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186928629709:android:9057c25bee7a0d62646684",
+        "android_client_info": {
+          "package_name": "com.example.mansamusa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186928629709-v5kevif686q12pn56h668s9uia4clqlc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mansamusa",
+            "certificate_hash": "acb09dfd0b37f78813f502c105be407ce05dfddd"
+          }
+        },
+        {
+          "client_id": "186928629709-mel03tkjfm5699lgn4ut8hn3iu1b3965.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mansamusa",
+            "certificate_hash": "a23e10b2bc23dfae4c9a28fdcc9e076fc2ab2420"
+          }
+        },
+        {
+          "client_id": "186928629709-8fn7hrk013808ljqj7rv1rgfo34rkr0e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9Xq5QAFtysbq8cBrp9q1qAfsw6E2is8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186928629709-8fn7hrk013808ljqj7rv1rgfo34rkr0e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "186928629709-hb8sq3tpg5vd413o0bb9agsbvmd8keuh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mansamusa"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186928629709:android:aa475dac803c7b18646684",
+        "android_client_info": {
+          "package_name": "com.example.mansamusaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186928629709-8fn7hrk013808ljqj7rv1rgfo34rkr0e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9Xq5QAFtysbq8cBrp9q1qAfsw6E2is8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186928629709-8fn7hrk013808ljqj7rv1rgfo34rkr0e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "186928629709-hb8sq3tpg5vd413o0bb9agsbvmd8keuh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mansamusa"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
