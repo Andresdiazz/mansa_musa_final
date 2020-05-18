@@ -23,7 +23,7 @@ void main() {
 
   runApp(MaterialApp(
     home: AnimatedSplash(
-      imagePath: 'images/logos/logos-01.png',
+      imagePath: 'images/logos/logo.png',
       home: MyApp(),
       customFunction: duringSplash,
       duration: 2500,

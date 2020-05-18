@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:mansamusaapp/Classes/ui/screens/selection_page.dart';
 import 'package:mansamusaapp/Users/bloc/bloc_user.dart';
+import 'package:mansamusaapp/Users/model/user.dart';
 import 'package:mansamusaapp/onboarding.dart';
 
 import 'register_screen.dart';
@@ -156,12 +157,7 @@ class _LoginFormState extends State<LoginForm> {
                           ) ,
                         ) ,
                       WidgetButton(
-                        onPressed: () {
-                          userBloc.signInWithGoogle( ).then( (
-                              FirebaseUser user) =>
-                              print( "El usuario es ${user.displayName}" ) );
-                          //Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => HomePage()));
-                        } ,
+                        onPressed: () => _loginGoogle( context ) ,
                         title: " Inicia Sesión con Google" ,
                       ) ,
                       Row(
@@ -207,7 +203,13 @@ class _LoginFormState extends State<LoginForm> {
           _errorMessage = "";
         } );
        try {
-         var user = await userBloc.signInEmail(email, password);
+         var user = await userBloc.signInEmail(email, password).then((FirebaseUser user){
+           userBloc.updateUserData(User(
+             uid: user.uid,
+             email: user.email,
+             name: user.displayName
+           ));
+         });
          Navigator.of(context).pop(context);
          Navigator.of(context).pushReplacementNamed('/home');
          return user != null;
@@ -219,6 +221,35 @@ class _LoginFormState extends State<LoginForm> {
          return e.message;
        }
       }
+    }
+  }
+
+  _loginGoogle(BuildContext context) async
+  {
+    if (!_loading) {
+        setState( () {
+          _loading = true;
+          _errorMessage = "";
+        } );
+        try {
+          var user = await userBloc.signInWithGoogle().then((FirebaseUser user){
+            userBloc.updateUserData(User(
+                uid: user.uid,
+                email: user.email,
+                name: user.displayName
+            ));
+          });
+          Navigator.of(context).pop(context);
+          Navigator.of(context).pushReplacementNamed('/home');
+          return user != null;
+        }catch (e){
+          setState(() {
+            _loading = false;
+            _errorMessage = "Email o contraseña incorrecta";
+          });
+          return e.message;
+        }
+
     }
   }
 

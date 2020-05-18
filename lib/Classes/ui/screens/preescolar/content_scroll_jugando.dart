@@ -4,12 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:mansamusaapp/Classes/ui/screens/preescolar/seconPagePreescolar.dart';
 
 
-class ContentScrollEjePreescolar extends StatelessWidget {
+class ContentScrollJugandoPre extends StatelessWidget {
   final String title;
   final double imageHeight;
   final double imageWidth;
 
-  ContentScrollEjePreescolar({
+  ContentScrollJugandoPre({
     this.title,
     this.imageHeight,
     this.imageWidth,
@@ -45,7 +45,7 @@ class ContentScrollEjePreescolar extends StatelessWidget {
       Container(
             height: imageHeight,
             child: StreamBuilder(
-          stream: Firestore.instance.collection('preescolar').document('principal').collection('tematico').snapshots(),
+          stream: Firestore.instance.collection('preescolar').document('principal').collection('jugando').snapshots(),
           builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
         if (!snapshot.hasData) {  return Text("loading...."); }
               int length = snapshot.data.documents.length;
@@ -59,7 +59,7 @@ class ContentScrollEjePreescolar extends StatelessWidget {
                   return InkWell(
                 onTap: (){
                   print(doc.documentID);
-                       Navigator.push(context, MaterialPageRoute(
+                        Navigator.push(context, MaterialPageRoute(
                     builder: (_) => SecondPagePreescolar(
                             title: doc.data['title'],
                             subtitle: doc.data['subtitle'],

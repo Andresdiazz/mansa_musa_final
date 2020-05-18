@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'components/tab_description.dart';
 import 'components/tab_ejeTematico.dart';
-import 'model/clases_model.dart';
-
 
 class SecondPage extends StatefulWidget {
 
-  final CardsPrincipal cards;
+  final String id;
 
-  SecondPage({this.cards});
+  final String title;
+  final String img;
+  final String description;
+  final String subtitle;
+
+
+
+  SecondPage({this.title,this.img,this.description,this.subtitle, this.id});
 
   @override
   _SecondPageState createState() => _SecondPageState();
@@ -19,8 +23,6 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
 
-    final String port = ModalRoute.of(context).settings.arguments;
-
     return Scaffold(
       body: DefaultTabController(
         length: 1,
@@ -28,7 +30,7 @@ class _SecondPageState extends State<SecondPage> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
             return [
               SliverAppBar(
-                title: Text(widget.cards.title.toUpperCase()),
+                title: Text(widget.title.toUpperCase()),
                 actions: [
                   Padding(
                     padding: const EdgeInsets.only(right: 10),
@@ -42,7 +44,7 @@ class _SecondPageState extends State<SecondPage> {
                 flexibleSpace: Container(
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(widget.cards.imageUrl),
+                          image: NetworkImage(widget.img),
                           fit: BoxFit.cover
                       )
                   ),
@@ -81,9 +83,10 @@ class _SecondPageState extends State<SecondPage> {
                   )
               ),
               child: TabEjeWidget(
-                title: widget.cards.title,
-                description: widget.cards.description,
-                subtitle: widget.cards.subtitle,
+                id: widget.id,
+                title: widget.title,
+                description: widget.description,
+                subtitle: widget.subtitle,
               ),
             ),
 

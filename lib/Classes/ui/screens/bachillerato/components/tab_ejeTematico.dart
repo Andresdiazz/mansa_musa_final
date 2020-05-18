@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:mansamusaapp/Classes/ui/screens/bachillerato/model/clases_model.dart';
 
 import 'content_scroll.dart';
+import 'content_scrollJugando.dart';
 import 'content_scrollRelacionados.dart';
 import 'content_scrollTemas.dart';
 
 class TabEjeWidget extends StatefulWidget {
 
 
-
+  final String id;
   final String title;
   final String description;
   final String subtitle;
 
   CardsPrincipal cards;
 
-  TabEjeWidget({Key key, this.title, this.description, this.subtitle});
+  TabEjeWidget({Key key, this.title, this.description, this.subtitle, this.id});
 
   @override
   _TabEjeWidgetState createState() => _TabEjeWidgetState();
@@ -35,7 +36,7 @@ class _TabEjeWidgetState extends State<TabEjeWidget> {
               padding: const EdgeInsets.only(left: 10),
               child: Text(
                 widget.title,
-                style: TextStyle(fontSize: 30, color: Color(0xffAC7830)),
+                style: TextStyle(fontSize: 30, color: Colors.white),
               ),
             ),
             SizedBox(
@@ -44,7 +45,7 @@ class _TabEjeWidgetState extends State<TabEjeWidget> {
             Expanded(
                 child: Container(
                   height: 1.5,
-                  decoration: BoxDecoration(color: Color(0xffAC7830)),
+                  decoration: BoxDecoration(color: Colors.white),
                 ))
           ],
         ),
@@ -53,8 +54,9 @@ class _TabEjeWidgetState extends State<TabEjeWidget> {
           padding: const EdgeInsets.only(left: 10),
           child: Text(widget.description, style: TextStyle(fontSize: 16, color: Colors.white, ),textAlign: TextAlign.justify,),
         ),
-        ContentScrollTema(
-          images: temasInteresList,
+        ContentScrollRelacionTematico(
+          //images: temasInteresList,
+          id: widget.id,
           title: widget.subtitle,
           imageHeight: 120.0,
           imageWidth: 123.0,
@@ -63,7 +65,7 @@ class _TabEjeWidgetState extends State<TabEjeWidget> {
 
         ),
         ContentScrollTema(
-          images: temasInteresList,
+          //images: temasInteresList,
           title: 'Temas de Interés',
           imageHeight: 250.0,
           imageWidth: 123.0,
@@ -71,8 +73,8 @@ class _TabEjeWidgetState extends State<TabEjeWidget> {
           paddingContainer: 0,
 
         ),
-        ContentScrollEje(
-          images: ejeTematicoList,
+        ContentScrolJugando(
+          //images: ejeTematicoList,
           title: 'Aprende Jugando',
           imageHeight: 120.0,
           imageWidth: 123.0,

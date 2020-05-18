@@ -6,9 +6,12 @@ import 'model/clases_model.dart';
 
 class ThirdPage extends StatefulWidget {
 
-  final CardsPrincipal cardsTema;
+  final String id;
+  final String title;
+  final String img;
+  final String description;
 
-  ThirdPage({this.cardsTema});
+  const ThirdPage({Key key, this.title, this.img, this.description, this.id}) : super(key: key);
 
   @override
   _ThirdPageState createState() => _ThirdPageState();
@@ -25,7 +28,7 @@ class _ThirdPageState extends State<ThirdPage> {
             headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
               return [
                 SliverAppBar(
-                  title: Text(widget.cardsTema.title.toUpperCase()),
+                  title: Text(widget.title),
                   actions: [
                     Padding(
                       padding: const EdgeInsets.only(right: 10),
@@ -38,7 +41,7 @@ class _ThirdPageState extends State<ThirdPage> {
                   flexibleSpace: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(widget.cardsTema.imageUrl),
+                          image: NetworkImage(widget.img),
                         fit: BoxFit.cover
                       )
                     ),
@@ -88,8 +91,8 @@ class _ThirdPageState extends State<ThirdPage> {
                     )
                 ),
                 child: TabDescriptionWidget(
-                  title: widget.cardsTema.title,
-                  description: widget.cardsTema.description,
+                  title: widget.title,
+                  description: widget.description,
                 ),
               ),
               Container(

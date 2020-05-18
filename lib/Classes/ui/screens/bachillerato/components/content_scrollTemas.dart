@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mansamusaapp/Classes/ui/screens/bachillerato/thirdPage.dart';
 
-import '../model/clases_model.dart';
 import '../secondPage.dart';
-import '../thirdPage.dart';
 
 class ContentScrollTema extends StatelessWidget {
 
-  final List<CardsPrincipal> images;
   final String title;
   final double imageHeight;
   final double imageWidth;
@@ -14,7 +13,6 @@ class ContentScrollTema extends StatelessWidget {
   final double paddingContainer;
 
   ContentScrollTema({
-    this.images,
     this.title,
     this.imageHeight,
     this.imageWidth,
@@ -45,22 +43,34 @@ class ContentScrollTema extends StatelessWidget {
                   child: Container(
                     height: 1.5,
                     decoration: BoxDecoration(color: Colors.white),
-                  ))
+                  )),
             ],
           ),
         ),
         Container(
-          height: imageHeight,
-          child: ListView.builder(
-            padding: EdgeInsets.symmetric(horizontal: paddingContainer),
+              height: imageHeight,
+            child: StreamBuilder(
+          stream: Firestore.instance.collection('bachillerato').document('principal').collection('interes').snapshots(),
+          builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
+        if (!snapshot.hasData) {  return Text("loading...."); }
+              int length = snapshot.data.documents.length;
+
+                return ListView.builder(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
             scrollDirection: Axis.horizontal,
-            itemCount: images.length,
-            itemBuilder: (BuildContext context, int index) {
+            itemCount: length,
+            itemBuilder: (_, int index) {
               //Portada port = portada[index];
-              return InkWell(
+                 final DocumentSnapshot doc = snapshot.data.documents[index];
+                  return InkWell(
                 onTap: (){
+                  print(doc.documentID);
                   Navigator.push(context, MaterialPageRoute(
-                      builder: (_) => ThirdPage(cardsTema: temasInteresList[index],)
+                    builder: (_) => ThirdPage(
+                            title: doc.data['title'],
+                            description: doc.data['description'],
+                            img:doc.data['img'],
+                      )
                   ));
                 },
                 child: Container(
@@ -83,15 +93,18 @@ class ContentScrollTema extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(5.0),
                     child: Image(
-                      image: AssetImage(temasInteresList[index].imageUrl),
+                      image: NetworkImage( '${doc.data["img"]}'),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
               );
             },
-          ),
-        ),
+          );
+
+          }
+            )
+              )
       ],
     );
   }

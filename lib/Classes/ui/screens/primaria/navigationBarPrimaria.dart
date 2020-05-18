@@ -18,7 +18,7 @@ class _NavigationBarPrimariaState extends State<NavigationBarPrimaria> {
     Text('Index 1: Search'),
     Chat(),
     SelectionPage(
-      logo: AssetImage("images/logos/logo2.png"),
+      logo: AssetImage("images/logos/logo.png"),
       colorAppBar: Colors.white,
       colorBackground: Colors.white,
       color: Color(0xff002E62),
@@ -66,7 +66,7 @@ class Chat extends StatelessWidget {
           backgroundColor: Colors.white,
           title: Center(
               child: Image.asset(
-                "images/logos/logo2.png",
+                "images/logos/logo.png",
                 height: 120,
                 width: 145,
               )),

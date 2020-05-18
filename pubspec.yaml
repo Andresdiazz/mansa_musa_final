@@ -22,7 +22,8 @@ environment:
 
 dependencies:
   firebase_auth: ^0.16.0
-  google_sign_in: ^4.4.4
+  google_sign_in:
+  cloud_firestore:
   generic_bloc_provider: ^1.0.9
   flutter:
     sdk: flutter

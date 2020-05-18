@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:mansamusaapp/Classes/ui/screens/preescolar/seconPagePreescolar.dart';
+
+import '../secondPage.dart';
 
 
-class ContentScrollEjePreescolar extends StatelessWidget {
+class ContentScrolJugando extends StatelessWidget {
   final String title;
   final double imageHeight;
   final double imageWidth;
+  final double padding;
+  final double paddingContainer;
 
-  ContentScrollEjePreescolar({
+  ContentScrolJugando({
     this.title,
     this.imageHeight,
     this.imageWidth,
+    this.padding,
+    this.paddingContainer
   });
 
   @override
@@ -25,10 +29,10 @@ class ContentScrollEjePreescolar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(left: 15),
+                padding: EdgeInsets.only(left: padding),
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: 23, color: Theme.of(context).primaryColor),
+                  style: TextStyle(fontSize: 23, color: Colors.white),
                 ),
               ),
               SizedBox(
@@ -37,15 +41,15 @@ class ContentScrollEjePreescolar extends StatelessWidget {
               Expanded(
                   child: Container(
                 height: 1.5,
-                decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+                decoration: BoxDecoration(color: Colors.white),
               ))
             ],
           ),
         ),
-      Container(
+        Container(
             height: imageHeight,
             child: StreamBuilder(
-          stream: Firestore.instance.collection('preescolar').document('principal').collection('tematico').snapshots(),
+          stream: Firestore.instance.collection('bachillerato').document('principal').collection('jugando').snapshots(),
           builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
         if (!snapshot.hasData) {  return Text("loading...."); }
               int length = snapshot.data.documents.length;
@@ -55,17 +59,18 @@ class ContentScrollEjePreescolar extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: length,
             itemBuilder: (_, int index) {
+              //Portada port = portada[index];
                  final DocumentSnapshot doc = snapshot.data.documents[index];
                   return InkWell(
                 onTap: (){
                   print(doc.documentID);
-                       Navigator.push(context, MaterialPageRoute(
-                    builder: (_) => SecondPagePreescolar(
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (_) => SecondPage(
                             title: doc.data['title'],
                             subtitle: doc.data['subtitle'],
                             description: doc.data['description'],
                             img:doc.data['img'],
-                    )
+                      )
                   ));
                 },
                 child: Container(

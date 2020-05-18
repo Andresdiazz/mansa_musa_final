@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           '/home': (BuildContext context) => new SelectionPage(
             colorAppBar: Color(0xff002E62),
             colorBackground: Color(0xff002E62),
-            logo: AssetImage("images/logos/logo3.png"),
+            logo: AssetImage("images/logos/logo-blanco.png"),
             color: Colors.white,
           ),
           '/secondPage': (BuildContext context) => ThirdPage(),

@@ -65,7 +65,7 @@ class OnboardingPageState extends State<OnboardingPage>
             return SelectionPage(
               colorAppBar: Color(0xff002E62),
               colorBackground: Color(0xff002E62),
-              logo: AssetImage("images/logos/logo3.png"),
+              logo: AssetImage("images/logos/logo-blanco.png"),
               color: Colors.white,
             );
           }
@@ -158,7 +158,7 @@ class OnboardingPageState extends State<OnboardingPage>
                                   Center(
                                     child: Image(
                                       image: AssetImage(
-                                          "images/logos/logos-02.png"),
+                                          "images/logos/logo-blanco.png"),
                                       height: 250.0,
                                       width: 250.0,
                                     ),

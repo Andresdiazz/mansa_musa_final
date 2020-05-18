@@ -18,7 +18,7 @@ class _NavigationBarBachillerState extends State<NavigationBarBachiller> {
     SelectionPage(
       colorAppBar: Color(0xff002E62),
       colorBackground: Color(0xff002E62),
-      logo: AssetImage("images/logos/logo3.png"),
+      logo: AssetImage("images/logos/logo-blanco.png"),
       color: Colors.white,
     )
   ];
@@ -83,7 +83,7 @@ class Chat extends StatelessWidget {
         appBar: AppBar(
           title: Center(
               child: Image.asset(
-            "images/logos/logo3.png",
+            "images/logos/logo-blanco.png",
             height: 120,
             width: 145,
           )),

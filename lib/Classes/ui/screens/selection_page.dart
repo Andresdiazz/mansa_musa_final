@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:mansamusaapp/Users/bloc/bloc_user.dart';
 
@@ -29,9 +30,11 @@ class _SelectionPageState extends State<SelectionPage> {
     return Scaffold(
        appBar: AppBar(
          backgroundColor: widget.colorAppBar,
-          title: Container(width: 140, height: 140, decoration: BoxDecoration(
-            image: DecorationImage(image: widget.logo)
-          ),),
+          title: Center(
+            child: Container(width: 140, height: 140, decoration: BoxDecoration(
+              image: DecorationImage(image: widget.logo)
+            ),),
+          ),
            actions: <Widget>[
           IconButton(
             icon: Icon(Icons.exit_to_app, color: widget.color,),

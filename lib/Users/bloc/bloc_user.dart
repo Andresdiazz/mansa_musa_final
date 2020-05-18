@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:mansamusaapp/Users/model/user.dart';
 import 'package:mansamusaapp/Users/repository/auth_repository.dart';
+import 'package:mansamusaapp/Users/repository/cloud_firestore_repository.dart';
 
 class UserBloc implements Bloc {
 
@@ -33,6 +35,10 @@ class UserBloc implements Bloc {
   Future<FirebaseUser> createAccountEmail(String email, String password) {
     return _auth_repository.createAccount(email, password);
   }
+
+  //5. Registra usuario en base de datos
+  final _cloudFirestoreRepository = CloudFirestoreRepository();
+  void updateUserData(User user) => _cloudFirestoreRepository.updateUserDataFirestore(user);
 
   @override
   void dispose() {

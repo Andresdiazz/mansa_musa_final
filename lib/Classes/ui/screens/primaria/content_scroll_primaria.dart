@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'model/clases_model_primaria.dart';
 import 'seconPagePrimaria.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class ContentScrollEjePrimaria extends StatelessWidget {
-  final List<CardsPrimaria> images;
   final String title;
   final double imageHeight;
   final double imageWidth;
 
   ContentScrollEjePrimaria({
-    this.images,
     this.title,
     this.imageHeight,
     this.imageWidth,
   });
-
-  @override
+ @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
@@ -42,18 +40,30 @@ class ContentScrollEjePrimaria extends StatelessWidget {
             ],
           ),
         ),
-        Container(
+      Container(
             height: imageHeight,
-            child: ListView.builder(
+            child: StreamBuilder(
+          stream: Firestore.instance.collection('primaria').document('principal').collection('tematico').snapshots(),
+          builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
+        if (!snapshot.hasData) {  return Text("loading...."); }
+              int length = snapshot.data.documents.length;
+
+        return ListView.builder(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             scrollDirection: Axis.horizontal,
-            itemCount: images.length,
-            itemBuilder: (BuildContext context, int index) {
-              //Portada port = portada[index];
-              return InkWell(
+            itemCount: length,
+            itemBuilder: (_, int index) {
+                 final DocumentSnapshot doc = snapshot.data.documents[index];
+                  return InkWell(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (_) => SecondPagePrimaria(card: ejeTematicoListPrimaria[index],)
+                  print(doc.documentID);
+                       Navigator.push(context, MaterialPageRoute(
+                    builder: (_) => SecondPagePrimaria(
+                            title: doc.data['title'],
+                           subtitle: doc.data['subtitle'],
+                            description: doc.data['description'],
+                            img:doc.data['img'],
+                    )
                   ));
                 },
                 child: Container(
@@ -76,15 +86,19 @@ class ContentScrollEjePrimaria extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(5.0),
                     child: Image(
-                      image: NetworkImage(ejeTematicoListPrimaria[index].imageUrl),
+                      image: NetworkImage( '${doc.data["img"]}'),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
               );
             },
-          ),
-            ),
+          );
+      
+          },
+        )
+            
+            )
       ],
     );
   }
