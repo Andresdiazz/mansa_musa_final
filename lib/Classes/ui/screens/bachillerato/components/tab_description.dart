@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mansamusaapp/Classes/ui/screens/bachillerato/model/clases_model.dart';
 
 import 'content_scroll.dart';
+import 'content_scrollJugando.dart';
 import 'content_scrollTemas.dart';
 
 class TabDescriptionWidget extends StatefulWidget {
@@ -59,13 +60,13 @@ class _TabDescriptionWidgetState extends State<TabDescriptionWidget> {
         ContentScrollTema(
           //images: temasInteresList,
           title: 'Semejantes',
-          imageHeight: 120.0,
+          imageHeight: 250.0,
           imageWidth: 123.0,
           padding: 10,
           paddingContainer: 0,
 
         ),
-        ContentScrollEje(
+        ContentScrolJugando(
           //images: ejeTematicoList,
           title: 'Aprende Jugando',
           imageHeight: 120.0,

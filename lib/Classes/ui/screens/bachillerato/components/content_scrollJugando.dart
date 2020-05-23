@@ -93,7 +93,7 @@ class ContentScrolJugando extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(5.0),
                     child: Image(
-                      image: NetworkImage( '${doc.data["img"]}'),
+                      image: NetworkImage('${doc.data["img"]}'),
                       fit: BoxFit.cover,
                     ),
                   ),

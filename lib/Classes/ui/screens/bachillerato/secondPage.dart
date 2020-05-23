@@ -30,7 +30,7 @@ class _SecondPageState extends State<SecondPage> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
             return [
               SliverAppBar(
-                title: Text(widget.title.toUpperCase()),
+                //title: Text(widget.title.toUpperCase()),
                 actions: [
                   Padding(
                     padding: const EdgeInsets.only(right: 10),
@@ -45,7 +45,7 @@ class _SecondPageState extends State<SecondPage> {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: NetworkImage(widget.img),
-                          fit: BoxFit.cover
+                          fit: BoxFit.fill
                       )
                   ),
                   child: Container(

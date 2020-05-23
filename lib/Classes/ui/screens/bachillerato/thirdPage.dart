@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'bottomNavigationBar.dart';
 import 'components/tab_description.dart';
 import 'model/clases_model.dart';
 
@@ -28,7 +29,7 @@ class _ThirdPageState extends State<ThirdPage> {
             headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
               return [
                 SliverAppBar(
-                  title: Text(widget.title),
+                  //title: Text(widget.title),
                   actions: [
                     Padding(
                       padding: const EdgeInsets.only(right: 10),
@@ -37,7 +38,7 @@ class _ThirdPageState extends State<ThirdPage> {
                       },child: Icon(Icons.play_circle_outline,size: 30,)),
                     )
                   ],
-                  expandedHeight: 230,
+                  expandedHeight: 320,
                   flexibleSpace: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -70,7 +71,7 @@ class _ThirdPageState extends State<ThirdPage> {
                       ),),
                     ),
                     Tab(
-                      child: Text("Rubrica", style: TextStyle(
+                      child: Text("Actividad", style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold
                       ),),

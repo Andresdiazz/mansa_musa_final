@@ -31,7 +31,7 @@ class _SelectionPageState extends State<SelectionPage> {
        appBar: AppBar(
          backgroundColor: widget.colorAppBar,
           title: Center(
-            child: Container(width: 140, height: 140, decoration: BoxDecoration(
+            child: Container(width: 80, height: 90, decoration: BoxDecoration(
               image: DecorationImage(image: widget.logo)
             ),),
           ),
@@ -68,7 +68,7 @@ class _SelectionPageState extends State<SelectionPage> {
                             width: 150,
                             height: 150,
                             decoration: BoxDecoration( borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(image: AssetImage("images/graficos/cleopatra.jpg"),
+                                image: DecorationImage(image: AssetImage("images/img/GIRL.png"),
                                     fit: BoxFit.cover)),
 
 
@@ -87,7 +87,7 @@ class _SelectionPageState extends State<SelectionPage> {
                             width: 150,
                             height: 150,
                             decoration: BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(image: AssetImage("images/graficos/latinoamerica.jpg"),
+                                image: DecorationImage(image: AssetImage("images/img/GIRL.png"),
                                     fit: BoxFit.cover)),
                           ),
                         ),
@@ -107,7 +107,7 @@ class _SelectionPageState extends State<SelectionPage> {
                         width: 150,
                         height: 150,
                         decoration: BoxDecoration( borderRadius: BorderRadius.circular(8),
-                            image: DecorationImage(image: AssetImage("images/graficos/sabiasque.jpg"),
+                            image: DecorationImage(image: AssetImage("images/img/KID.png"),
                                 fit: BoxFit.cover)),
 
                       ),

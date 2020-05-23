@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_bottom_navigation_bar/gradient_bottom_navigation_bar.dart';
+import 'package:mansamusaapp/Classes/ui/screens/bachillerato/searchBachillerato.dart';
 import 'package:mansamusaapp/Classes/ui/screens/chat/chat_page.dart';
 import '../selection_page.dart';
 import 'home_page.dart';
@@ -13,7 +14,7 @@ class _NavigationBarBachillerState extends State<NavigationBarBachiller> {
   int _selectedIndex = 0;
   final _widgetOptions = [
     HomePage(),
-    Text('Index 1: Search'),
+    SearchBachillerato(),
     Chat(),
     SelectionPage(
       colorAppBar: Color(0xff002E62),
@@ -22,6 +23,7 @@ class _NavigationBarBachillerState extends State<NavigationBarBachiller> {
       color: Colors.white,
     )
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +38,10 @@ class _NavigationBarBachillerState extends State<NavigationBarBachiller> {
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
-
                 size: 25,
               ),
               title: Text(
                 'Inicio',
-
               )),
           BottomNavigationBarItem(
               icon: Icon(Icons.search,  size: 25),
@@ -84,8 +84,8 @@ class Chat extends StatelessWidget {
           title: Center(
               child: Image.asset(
             "images/logos/logo-blanco.png",
-            height: 120,
-            width: 145,
+            height: 80,
+            width: 90,
           )),
           backgroundColor: Theme.of(context).primaryColor,
         ),

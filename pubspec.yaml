@@ -58,9 +58,7 @@ flutter:
     - images/logos/
     - images/Recurso 1.png
     - images/Recurso 3.png
-    - images/graficos/
-    - images/EJE TEMATICO/
-    - images/TEMAS INTERES/
+    - images/img/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

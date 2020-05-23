@@ -95,7 +95,7 @@ class ContentScrollEje extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5.0),
                     child: Image(
                       image: NetworkImage( '${doc.data["img"]}'),
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:mansamusaapp/Classes/ui/screens/bachillerato/shopPage.dart';
 import 'components/content_scroll.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -19,8 +20,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       //backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Center(child: Image.asset("images/logos/logo-blanco.png", height: 120, width: 145,),
+        title: Center(child: Image.asset("images/logos/logo-blanco.png", height: 80, width: 90,),
         ),
+        actions: [
+          IconButton(icon: Icon(Icons.shopping_cart), onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ShopPage()));
+          })
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
