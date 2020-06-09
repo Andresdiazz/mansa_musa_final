@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mansamusaapp/Classes/ui/screens/bachillerato/gamePage.dart';
 
 import '../secondPage.dart';
 
@@ -65,7 +66,7 @@ class ContentScrolJugando extends StatelessWidget {
                 onTap: (){
                   print(doc.documentID);
                   Navigator.push(context, MaterialPageRoute(
-                    builder: (_) => SecondPage(
+                    builder: (_) => GamePage(
                             title: doc.data['title'],
                             subtitle: doc.data['subtitle'],
                             description: doc.data['description'],
@@ -94,7 +95,7 @@ class ContentScrolJugando extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5.0),
                     child: Image(
                       image: NetworkImage('${doc.data["img"]}'),
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),

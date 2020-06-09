@@ -194,12 +194,17 @@ channelMercadoPagoRespuesta.setMethodCallHandler((MethodCall call) async{
         color: Theme.of(context).primaryColor,
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                Image.asset("images/logos/logo-blanco.png"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Center(child: Text("¡Suscribete y disfruta todo el contenido que tenemos para ti!", style: TextStyle(color: Colors.white, fontSize: 20), textAlign: TextAlign.center,)),
+                ),
                 RaisedButton(onPressed:tarifa1 ,
-                child: Text("Para tu mes por \u0024 20.000", style: TextStyle(fontSize: 20),),
+                child: Text("Adquiere 1 mes por \u0024 20.000", style: TextStyle(fontSize: 20),),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)
                   ),
@@ -213,7 +218,7 @@ channelMercadoPagoRespuesta.setMethodCallHandler((MethodCall call) async{
                   color: Colors.white,
                 ),
                 RaisedButton(onPressed: tarifa3,
-                  child: Text("Aquiere el año por \u0024 120.000", style: TextStyle(fontSize: 20),),
+                  child: Text("Aquiere 12 meses por \u0024 120.000", style: TextStyle(fontSize: 20),),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)
                   ),

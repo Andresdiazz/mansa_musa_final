@@ -35,159 +35,160 @@ class _LoginFormState extends State<LoginForm> {
 
 
   Widget SignIn() {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric( horizontal: 50 ) ,
-        child: Form(
-          key: _formKey ,
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                Align(
-                    alignment: Alignment.topLeft ,
-                    child: Text(
-                      "Ingresa a tu cuenta" ,
-                      style: TextStyle(
-                          color: Colors.white ,
-                          fontSize: 20 ,
-                          fontWeight: FontWeight.bold ) ,
-                    ) ) ,
-                SizedBox(
-                  height: 20 ,
-                ) ,
-                TextFormField(
-                  style: TextStyle( color: Colors.white70 , fontSize: 15 ) ,
-                  decoration: InputDecoration(
-                      labelText: "Email" ,
-                      filled: true ,
-                      fillColor: Colors.black38 ,
-                      prefixIcon: Icon(
-                        Icons.email ,
-                        color: Colors.white38 ,
-                      ) ,
-                      labelStyle:
-                      TextStyle( color: Colors.white38 , fontSize: 12 ) ,
-                      border: UnderlineInputBorder(
-                        borderRadius: BorderRadius.circular( 8 ) ,
-                      ) ) ,
-                  keyboardType: TextInputType.emailAddress ,
-                  //autovalidate: true,
-                  autocorrect: false ,
-                  onSaved: (value) {
-                    email = value;
-                  } ,
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return 'Este campo es obligatorio';
-                    }
-                  } ,
-                ) ,
-                SizedBox(
-                  height: 5 ,
-                ) ,
-                TextFormField(
-                  style: TextStyle( color: Colors.white70 , fontSize: 15 ) ,
-                  textCapitalization: TextCapitalization.words ,
-                  decoration: InputDecoration(
-                      labelText: 'Contraseña de 6 o más carácteres' ,
-                      suffixIcon: IconButton(icon: Icon(showPassword?Icons.visibility:Icons.visibility_off), onPressed: (){
-                        setState(() {
-                          showPassword = !showPassword;
-                        });
-                      }),
-                      labelStyle:
-                      TextStyle( color: Colors.white38 , fontSize: 12 ) ,
-                      filled: true ,
-                      fillColor: Colors.black38 ,
-                      prefixIcon: Icon(
-                        Icons.lock ,
-                        color: Colors.white38 ,
-                      ) ,
-                      border: UnderlineInputBorder(
-                        borderRadius: BorderRadius.circular( 8 ) ,
-                      ) ) ,
-                  obscureText: !showPassword,
+    return Padding(
+      padding: const EdgeInsets.symmetric( horizontal: 50 ) ,
+      child: Form(
+        key: _formKey ,
+        child: SingleChildScrollView(
+          child: Column(
 
-                  //autovalidate: true,
-                  autocorrect: false ,
-                  onSaved: (value) {
-                    password = value;
-                  } ,
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return 'Este campo es obligatorio';
-                    }
-                  } , ) ,
-                Padding(
-                  padding: EdgeInsets.symmetric( vertical: 5 ) ,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch ,
-                    children: <Widget>[
-                      RaisedButton(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        textColor: Theme.of(context).primaryColor ,
-                        onPressed: () => _login( context ) ,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center ,
-                          children: <Widget>[
-                            Text( "Iniciar sesión" ) ,
-                            if (_loading)
-                              Container(
-                                height: 20 ,
-                                width: 20 ,
-                                margin: const EdgeInsets.only( left: 20 ) ,
-                                child: CircularProgressIndicator( ) ,
-                              )
-                          ] ,
-                        ) ,
-                      ) ,
-                      if (_errorMessage.isNotEmpty)
-                        Padding(
-                          padding: const EdgeInsets.all( 8 ) ,
-                          child: Text(
-                            _errorMessage ,
-                            style: TextStyle(
-                              color: Colors.red ,
-                              fontWeight: FontWeight.bold ,
-                            ) ,
-                            textAlign: TextAlign.center ,
-                          ) ,
-                        ) ,
-                      WidgetButton(
-                        onPressed: () => _loginGoogle( context ) ,
-                        title: " Inicia Sesión con Google" ,
-                      ) ,
-                      Row(
+            children: <Widget>[
+              Image.asset("images/logos/logo-blanco.png", width: 250,),
+              SizedBox(height: 50,),
+              Align(
+                  alignment: Alignment.topLeft ,
+                  child: Text(
+                    "Ingresa a tu cuenta" ,
+                    style: TextStyle(
+                        color: Colors.white ,
+                        fontSize: 20 ,
+                        fontWeight: FontWeight.bold ) ,
+                  ) ) ,
+              SizedBox(
+                height: 20 ,
+              ) ,
+              TextFormField(
+                style: TextStyle( color: Colors.white70 , fontSize: 15 ) ,
+                decoration: InputDecoration(
+                    labelText: "Email" ,
+                    filled: true ,
+                    fillColor: Colors.black38 ,
+                    prefixIcon: Icon(
+                      Icons.email ,
+                      color: Colors.white38 ,
+                    ) ,
+                    labelStyle:
+                    TextStyle( color: Colors.white38 , fontSize: 12 ) ,
+                    border: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular( 8 ) ,
+                    ) ) ,
+                keyboardType: TextInputType.emailAddress ,
+                //autovalidate: true,
+                autocorrect: false ,
+                onSaved: (value) {
+                  email = value;
+                } ,
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Este campo es obligatorio';
+                  }
+                } ,
+              ) ,
+              SizedBox(
+                height: 5 ,
+              ) ,
+              TextFormField(
+                style: TextStyle( color: Colors.white70 , fontSize: 15 ) ,
+                textCapitalization: TextCapitalization.words ,
+                decoration: InputDecoration(
+                    labelText: 'Contraseña de 6 o más carácteres' ,
+                    suffixIcon: IconButton(icon: Icon(showPassword?Icons.visibility:Icons.visibility_off), onPressed: (){
+                      setState(() {
+                        showPassword = !showPassword;
+                      });
+                    }),
+                    labelStyle:
+                    TextStyle( color: Colors.white38 , fontSize: 12 ) ,
+                    filled: true ,
+                    fillColor: Colors.black38 ,
+                    prefixIcon: Icon(
+                      Icons.lock ,
+                      color: Colors.white38 ,
+                    ) ,
+                    border: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular( 8 ) ,
+                    ) ) ,
+                obscureText: !showPassword,
+
+                //autovalidate: true,
+                autocorrect: false ,
+                onSaved: (value) {
+                  password = value;
+                } ,
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Este campo es obligatorio';
+                  }
+                } , ) ,
+              Padding(
+                padding: EdgeInsets.symmetric( vertical: 5 ) ,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch ,
+                  children: <Widget>[
+                    RaisedButton(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      textColor: Theme.of(context).primaryColor ,
+                      onPressed: () => _login( context ) ,
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center ,
                         children: <Widget>[
-                          Text(
-                            "¿Aún no tienes cuenta?" ,
-                            style: TextStyle( color: Colors.white ) ,
-                          ) ,
-                          FlatButton(
-                            child: Text(
-                              'Crear cuenta' ,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold ,
-                                  fontSize: 15 ,
-                                  color: Color( 0xffC48934 ) ) ,
-                            ) ,
-                            onPressed: () {
-                              Navigator.push( context , MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      RegisterScreen( ) ) );
-                            } ,
-                          ) ,
+                          Text( "Iniciar sesión" ) ,
+                          if (_loading)
+                            Container(
+                              height: 20 ,
+                              width: 20 ,
+                              margin: const EdgeInsets.only( left: 20 ) ,
+                              child: CircularProgressIndicator( ) ,
+                            )
                         ] ,
-                      )
-                    ] ,
-                  ) ,
-                )
-              ] ,
-            ) ,
+                      ) ,
+                    ) ,
+                    if (_errorMessage.isNotEmpty)
+                      Padding(
+                        padding: const EdgeInsets.all( 8 ) ,
+                        child: Text(
+                          _errorMessage ,
+                          style: TextStyle(
+                            color: Colors.red ,
+                            fontWeight: FontWeight.bold ,
+                          ) ,
+                          textAlign: TextAlign.center ,
+                        ) ,
+                      ) ,
+                    WidgetButton(
+                      onPressed: () => _loginGoogle( context ) ,
+                      title: " Inicia Sesión con Google" ,
+                    ) ,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center ,
+                      children: <Widget>[
+                        Text(
+                          "¿Aún no tienes cuenta?" ,
+                          style: TextStyle( color: Colors.white ) ,
+                        ) ,
+                        FlatButton(
+                          child: Text(
+                            'Crear cuenta' ,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold ,
+                                fontSize: 15 ,
+                                color: Color( 0xffC48934 ) ) ,
+                          ) ,
+                          onPressed: () {
+                            Navigator.push( context , MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    RegisterScreen( ) ) );
+                          } ,
+                        ) ,
+                      ] ,
+                    )
+                  ] ,
+                ) ,
+              )
+            ] ,
           ) ,
         ) ,
       ) ,

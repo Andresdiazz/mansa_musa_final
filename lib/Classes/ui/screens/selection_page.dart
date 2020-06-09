@@ -31,7 +31,7 @@ class _SelectionPageState extends State<SelectionPage> {
        appBar: AppBar(
          backgroundColor: widget.colorAppBar,
           title: Center(
-            child: Container(width: 80, height: 90, decoration: BoxDecoration(
+            child: Container(width: 90, height: 90, decoration: BoxDecoration(
               image: DecorationImage(image: widget.logo)
             ),),
           ),
@@ -53,7 +53,7 @@ class _SelectionPageState extends State<SelectionPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("¿Qué quieres aprender hoy?", style: TextStyle(fontSize: 23, color: widget.color, ),),
+                Text("¡Dinos que quieres aprender!", style: TextStyle(fontSize: 23, color: widget.color, ),),
                 SizedBox(height: 50,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -68,7 +68,7 @@ class _SelectionPageState extends State<SelectionPage> {
                             width: 150,
                             height: 150,
                             decoration: BoxDecoration( borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(image: AssetImage("images/img/GIRL.png"),
+                                image: DecorationImage(image: AssetImage("images/img/PREESCOLAR.jpg"),
                                     fit: BoxFit.cover)),
 
 
@@ -86,8 +86,8 @@ class _SelectionPageState extends State<SelectionPage> {
                           child: Container(
                             width: 150,
                             height: 150,
-                            decoration: BoxDecoration(color: Colors.blueAccent, borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(image: AssetImage("images/img/GIRL.png"),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),
+                                image: DecorationImage(image: AssetImage("images/img/PRIMARIA.png"),
                                     fit: BoxFit.cover)),
                           ),
                         ),
@@ -107,7 +107,7 @@ class _SelectionPageState extends State<SelectionPage> {
                         width: 150,
                         height: 150,
                         decoration: BoxDecoration( borderRadius: BorderRadius.circular(8),
-                            image: DecorationImage(image: AssetImage("images/img/KID.png"),
+                            image: DecorationImage(image: AssetImage("images/img/BACHILLERATO.png"),
                                 fit: BoxFit.cover)),
 
                       ),

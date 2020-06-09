@@ -6,6 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'components/content_scrollJugando.dart';
 import 'components/content_scrollTemas.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -20,10 +21,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       //backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Center(child: Image.asset("images/logos/logo-blanco.png", height: 80, width: 90,),
+        title: Center(child: Image.asset("images/logos/logo-blanco.png", width: 90,),
         ),
         actions: [
-          IconButton(icon: Icon(Icons.shopping_cart), onPressed: (){
+          IconButton(icon: Icon(FontAwesomeIcons.solidCreditCard, color: Colors.deepOrangeAccent,), onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => Pago()));
           })
         ],
@@ -105,7 +106,7 @@ Widget build(BuildContext context) {
                      height: 190,
                      width: double.infinity,
                         child: Carousel(
-                          boxFit: BoxFit.cover,
+                          boxFit: BoxFit.fill,
                           autoplay: true,
                           autoplayDuration: Duration(seconds: 5),
                           animationCurve: Curves.fastOutSlowIn,

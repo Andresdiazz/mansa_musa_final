@@ -1,4 +1,4 @@
-import 'package:memorygame/model/tile_model.dart';
+import 'package:mansamusaapp/Games/par/model/tile_model.dart';
 
    
 String selectedTile = "";
@@ -28,55 +28,55 @@ List<TileModel>  getPairs(){
   TileModel tileModel = new TileModel();
 
   //1
-  tileModel.setImageAssetPath("assets/fox.png");
+  tileModel.setImageAssetPath("images/fox.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //2
-  tileModel.setImageAssetPath("assets/hippo.png");
+  tileModel.setImageAssetPath("images/hippo.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //3
-  tileModel.setImageAssetPath("assets/horse.png");
+  tileModel.setImageAssetPath("images/img/PRIMARIA.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //4
-  tileModel.setImageAssetPath("assets/monkey.png");
+  tileModel.setImageAssetPath("images/monkey.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
   //5
-  tileModel.setImageAssetPath("assets/panda.png");
+  tileModel.setImageAssetPath("images/panda.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //6
-  tileModel.setImageAssetPath("assets/parrot.png");
+  tileModel.setImageAssetPath("images/parrot.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //7
-  tileModel.setImageAssetPath("assets/rabbit.png");
+  tileModel.setImageAssetPath("images/rabbit.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //8
-  tileModel.setImageAssetPath("assets/zoo.png");
+  tileModel.setImageAssetPath("images/zoo.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
@@ -92,55 +92,55 @@ List<TileModel>  getQuestionPairs(){
   TileModel tileModel = new TileModel();
 
   //1
-  tileModel.setImageAssetPath("assets/question.png");
+  tileModel.setImageAssetPath("images/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //2
-  tileModel.setImageAssetPath("assets/question.png");
+  tileModel.setImageAssetPath("images/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //3
-  tileModel.setImageAssetPath("assets/question.png");
+  tileModel.setImageAssetPath("images/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //4
-  tileModel.setImageAssetPath("assets/question.png");
+  tileModel.setImageAssetPath("images/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
   //5
-  tileModel.setImageAssetPath("assets/question.png");
+  tileModel.setImageAssetPath("images/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //6
-  tileModel.setImageAssetPath("assets/question.png");
+  tileModel.setImageAssetPath("images/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //7
-  tileModel.setImageAssetPath("assets/question.png");
+  tileModel.setImageAssetPath("images/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);
   tileModel = new TileModel();
 
   //8
-  tileModel.setImageAssetPath("assets/question.png");
+  tileModel.setImageAssetPath("images/question.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:mansamusaapp/Classes/ui/screens/bachillerato/model/clases_model.dart';
 
@@ -34,9 +35,12 @@ class _TabEjeWidgetState extends State<TabEjeWidget> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(left: 10),
-              child: Text(
+              child: AutoSizeText(
                 widget.title,
                 style: TextStyle(fontSize: 30, color: Colors.white),
+                maxFontSize: 30,
+                maxLines: 2,
+                minFontSize: 15,
               ),
             ),
             SizedBox(
@@ -54,6 +58,7 @@ class _TabEjeWidgetState extends State<TabEjeWidget> {
           padding: const EdgeInsets.only(left: 10),
           child: Text(widget.description, style: TextStyle(fontSize: 16, color: Colors.white, ),textAlign: TextAlign.justify,),
         ),
+        SizedBox(height: 10,),
         ContentScrollRelacionTematico(
           //images: temasInteresList,
           id: widget.id,

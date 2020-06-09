@@ -4,6 +4,8 @@ import 'package:mansamusaapp/Classes/ui/screens/bachillerato/model/clases_model.
 import 'content_scroll.dart';
 import 'content_scrollJugando.dart';
 import 'content_scrollTemas.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+
 
 class TabDescriptionWidget extends StatefulWidget {
 
@@ -38,9 +40,12 @@ class _TabDescriptionWidgetState extends State<TabDescriptionWidget> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(left: 10),
-              child: Text(
+              child: AutoSizeText(
                 widget.title,
                 style: TextStyle(fontSize: 30, color: Colors.white),
+                maxFontSize: 30,
+                minFontSize: 20,
+                maxLines: 2,
               ),
             ),
             SizedBox(
@@ -57,6 +62,7 @@ class _TabDescriptionWidgetState extends State<TabDescriptionWidget> {
           padding: const EdgeInsets.only(left: 10),
           child: Text(widget.description, style: TextStyle(fontSize: 16, color: Colors.white, ),textAlign: TextAlign.justify,),
         ),
+        SizedBox(height: 10,),
         ContentScrollTema(
           //images: temasInteresList,
           title: 'Semejantes',
