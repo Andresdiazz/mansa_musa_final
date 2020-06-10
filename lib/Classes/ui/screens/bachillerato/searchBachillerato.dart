@@ -31,6 +31,16 @@ class _SearchBachilleratoState extends State<SearchBachillerato> {
            queryResultSet.add(docs.documents[i].data);
          }
       });
+      SearchService().searchByName2(value).then((QuerySnapshot docs){
+        for(int i = 0; i < docs.documents.length; ++i) {
+          queryResultSet.add(docs.documents[i].data);
+        }
+      });
+      SearchService().searchByName3(value).then((QuerySnapshot docs){
+        for(int i = 0; i < docs.documents.length; ++i) {
+          queryResultSet.add(docs.documents[i].data);
+        }
+      });
     } else {
       tempSearchStore = [];
       queryResultSet.forEach((element) { 
@@ -59,33 +69,31 @@ class _SearchBachilleratoState extends State<SearchBachillerato> {
        body: ListView(
          children: <Widget>[
            Padding(
-             padding: EdgeInsets.only(top: 10, left: 15, right: 5),
-             child: Row(
-               children: [
-                 SizedBox(
-                   width: MediaQuery.of(context).size.width / 1.4,
-                   child: TextFormField(
-                     controller: myController,
-                     onChanged: (val) {
-                       initiateSearch(val);
-                     },
-                     enabled: true,
-                     style: TextStyle( color: Colors.white70 , fontSize: 15 ) ,
-                     decoration: InputDecoration(
-                         labelText: "Busca el Tema de Interes" ,
-                         filled: true ,
-                         fillColor: Colors.black38 ,
-                         prefixIcon: Icon(
-                           Icons.search ,
-                           color: Colors.white38 ,
-                         ) ,
-                         labelStyle:
-                         TextStyle( color: Colors.white38 , fontSize: 12 ) ,
-                         border: UnderlineInputBorder(
-                           borderRadius: BorderRadius.circular( 8 ) ,
-                         ) ) ,
-                   ),
-                 ),
+             padding: const EdgeInsets.symmetric(vertical: 10),
+             child: AppBar(
+               title: TextFormField(
+                 controller: myController,
+                 onChanged: (val) {
+                   initiateSearch(val);
+                 },
+                 enabled: true,
+                 style: TextStyle( color: Colors.white70 , fontSize: 15 ) ,
+                 decoration: InputDecoration(
+                     labelText: "Busca el Tema de Interes" ,
+                     filled: true ,
+                     fillColor: Colors.black38 ,
+                     prefixIcon: Icon(
+                       Icons.search ,
+                       color: Colors.white38 ,
+                     ) ,
+                     labelStyle:
+                     TextStyle( color: Colors.white38 , fontSize: 12 ) ,
+                     border: UnderlineInputBorder(
+                       borderRadius: BorderRadius.circular( 8 ) ,
+                     ) ) ,
+               ),
+               elevation: 0,
+               actions: [
                  FlatButton(onPressed: (){
                    FocusScope.of(context).requestFocus(new FocusNode());
                    clearTextInput();
@@ -93,7 +101,7 @@ class _SearchBachilleratoState extends State<SearchBachillerato> {
                  }, child: Text("Cancelar", style: TextStyle(color: Colors.white, fontSize: 19),))
                ],
              ),
-             ),
+           ),
              SizedBox(height: 10.0,),
              GridView.count(
                padding: EdgeInsets.only(left: 10.0,right: 10.0),
@@ -132,7 +140,7 @@ Widget buildResultCard(data, BuildContext context){
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
-          image: DecorationImage(image: NetworkImage(data['img']), fit: BoxFit.cover)
+          image: DecorationImage(image: NetworkImage(data['img']), fit: BoxFit.fill)
         ),
       ),
     ),

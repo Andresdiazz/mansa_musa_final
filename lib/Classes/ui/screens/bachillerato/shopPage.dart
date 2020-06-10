@@ -204,21 +204,23 @@ channelMercadoPagoRespuesta.setMethodCallHandler((MethodCall call) async{
                   child: Center(child: Text("¡Suscribete y disfruta todo el contenido que tenemos para ti!", style: TextStyle(color: Colors.white, fontSize: 20), textAlign: TextAlign.center,)),
                 ),
                 RaisedButton(onPressed:tarifa1 ,
-                child: Text("Adquiere 1 mes por \u0024 20.000", style: TextStyle(fontSize: 20),),
+                child: Text("Adquiere 1 mes por \u0024 20.000", style: TextStyle(fontSize: 18),),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)
                   ),
                   color: Colors.white,
                 ),
+                SizedBox(height: 10,),
                 RaisedButton(onPressed: tarifa2,
-                  child: Text("Adquiere 6 meses por \u0024 70.000", style: TextStyle(fontSize: 20),),
+                  child: Text("Adquiere 6 meses por \u0024 70.000", style: TextStyle(fontSize: 18),),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)
                   ),
                   color: Colors.white,
                 ),
+                SizedBox(height: 10,),
                 RaisedButton(onPressed: tarifa3,
-                  child: Text("Aquiere 12 meses por \u0024 120.000", style: TextStyle(fontSize: 20),),
+                  child: Text("Aquiere 12 meses por \u0024 120.000", style: TextStyle(fontSize: 18),),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)
                   ),

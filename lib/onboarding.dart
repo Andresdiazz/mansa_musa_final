@@ -189,7 +189,7 @@ class OnboardingPageState extends State<OnboardingPage>
                                             "Tu eliges como aprender",
                                             style: TextStyle(
                                                 color: Colors.white,
-                                                fontSize: 28.0),
+                                                fontSize: 22.0),
                                             textAlign: TextAlign.center,
                                           ),
                                         ),
@@ -207,103 +207,81 @@ class OnboardingPageState extends State<OnboardingPage>
                             child: Stack(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 50),
+                                  padding: const EdgeInsets.symmetric(vertical: 5),
                                   child: Center(child: Image.asset("images/2.png", fit: BoxFit.cover,)),
                                 ),
-                                Align(
-                                  alignment: Alignment.bottomCenter,
-                                  child: Container(
-                                    height: media.height / 4.5,
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        /*Center(
-                                          child: Image(
-                                            image:
-                                            AssetImage("images/2.png"),
-                                            width: 250.0,
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 100),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.end,
+                                    children: <Widget>[
+                                      Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.start,
+                                        children: <Widget>[
+                                          Icon(
+                                            Icons.check_box,
+                                            color: Colors.white,
                                           ),
-                                        ),*/
-                                        Container(
-                                          width: media.width / 1.4,
-                                          child: Center(
-                                            child: Column(
-                                              mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                              children: <Widget>[
-                                                Row(
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                                  children: <Widget>[
-                                                    Icon(
-                                                      Icons.check_box,
-                                                      color: Colors.white,
-                                                    ),
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Text(
-                                                      "Cancela cuando quieras",
-                                                      style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 22.0),
-                                                      textAlign: TextAlign.left,
-                                                    ),
-                                                  ],
-                                                ),
-                                                Center(
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                    children: <Widget>[
-                                                      Icon(
-                                                        Icons.check_box,
-                                                        color: Colors.white,
-                                                      ),
-                                                      SizedBox(
-                                                        width: 10,
-                                                      ),
-                                                      Text(
-                                                        "Aprende desde cualquier\ndispositivo",
-                                                        style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 22.0,
-                                                        ),
-                                                        textAlign: TextAlign.left,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                                  children: <Widget>[
-                                                    Icon(
-                                                      Icons.check_box,
-                                                      color: Colors.white,
-                                                    ),
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    Text(
-                                                      "Contenido HD y 4K",
-                                                      style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 22.0),
-                                                      textAlign: TextAlign.left,
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text(
+                                            "Cancela cuando quieras",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18.0),
+                                            textAlign: TextAlign.left,
+                                          ),
+                                        ],
+                                      ),
+                                      Center(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                          //crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.check_box,
+                                              color: Colors.white,
                                             ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              "Aprende desde cualquier\ndispositivo",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18.0,
+                                              ),
+                                              textAlign: TextAlign.left,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.start,
+                                        children: <Widget>[
+                                          Icon(
+                                            Icons.check_box,
+                                            color: Colors.white,
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: 25,
-                                        ),
-
-                                      ],
-                                    ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text(
+                                            "Contenido HD y 4K",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18.0),
+                                            textAlign: TextAlign.left,
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: 20,)
+                                    ],
                                   ),
                                 ),
                               ],
@@ -316,30 +294,28 @@ class OnboardingPageState extends State<OnboardingPage>
 
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: _buildPageIndicator(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: _buildPageIndicator(),
+                  ),
                 ),
                 _currentPage != _numPages - 1
-                    ? Expanded(
-                    child: Align(
-                      alignment: FractionalOffset.bottomRight,
-                      child: FlatButton(
-                        onPressed: () {
-                          _pageController.nextPage(
-                              duration:
-                              Duration(milliseconds: 500),
-                              curve: Curves.ease);
-                        },
-
-                      ),
-                    ))
-                    : Text(''),
+                    ?
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
                   child: RaisedButton(onPressed: ()  =>
                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()))
                   , child: Text('Iniciar Sesión', style: TextStyle(fontSize: 18),),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),),
+                ): Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+                  child: RaisedButton(onPressed: ()  =>
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()))
+                    , child: Text('Iniciar Sesión', style: TextStyle(fontSize: 18),),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),),

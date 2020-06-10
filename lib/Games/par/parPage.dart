@@ -125,7 +125,7 @@ class _ParPageState extends State<ParPage> {
                           child: Card(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15)),
-                              color: Colors.deepOrangeAccent[900],
+                              color: Colors.deepOrangeAccent,
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 30, horizontal: 40),
@@ -203,6 +203,7 @@ class _TileState extends State<Tile> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        FlutterBeep.beep();
         if (!selected) {
           setState(() {
             myPairs[widget.tileIndex].setIsSelected(true);
@@ -235,6 +236,7 @@ class _TileState extends State<Tile> {
               print("Mala decisión");
               print(widget.tileIndex);
               print(selectedIndex);
+              FlutterBeep.beep(false);
               selected = true;
               Future.delayed(const Duration(seconds: 1), () {
                 this.widget.parent.setState(() {
@@ -287,59 +289,62 @@ class LosePage extends StatelessWidget {
                     image: AssetImage("images/games/JUEGO-PAREJAS-VERTICAL.jpg"),
                     fit: BoxFit.cover)),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 200, horizontal: 50),
-            child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                color: Colors.deepOrangeAccent,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 0, horizontal: 40),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment:
-                    CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      Text(
-                        "Se acabó el tiempo, esfuerzate un poco más",
-                        style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600),
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          //Al momento que da click  si no encuentra la pareja reinicia
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (_) => ParPage()
-                          ));
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 200,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
-                            borderRadius:
-                            BorderRadius.circular(10),
-                          ),
-                          child: Text(
-                            "Volver a empezar",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500),
+          Center(
+            child: Container(
+              height: MediaQuery.of(context).size.height / 3,
+              width: MediaQuery.of(context).size.width / 1.2,
+              child: Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  color: Colors.deepOrangeAccent,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 0, horizontal: 40),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment:
+                      CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        Text(
+                          "Se acabó el tiempo, esfuerzate un poco más",
+                          style: TextStyle(
+                              fontSize: 22,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            //Al momento que da click  si no encuentra la pareja reinicia
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (_) => ParPage()
+                            ));
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 200,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).primaryColor,
+                              borderRadius:
+                              BorderRadius.circular(10),
+                            ),
+                            child: Text(
+                              "Volver a empezar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                )),
+                      ],
+                    ),
+                  )),
+            ),
           )
         ],
       ),

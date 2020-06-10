@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mansamusaapp/Classes/ui/screens/bachillerato/thirdPage.dart';
 
@@ -95,10 +96,10 @@ class ContentScrollRelacionTematico extends StatelessWidget {
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(5.0),
-                            child: Image(
-                              image: NetworkImage('${doc.data["img"]}'),
-                              fit: BoxFit.cover,
-                            ),
+                            child: CachedNetworkImage(
+                              imageUrl: "${doc.data["img"]}",
+                              fit: BoxFit.fill,
+                            )
                           ),
                         ),
                       );

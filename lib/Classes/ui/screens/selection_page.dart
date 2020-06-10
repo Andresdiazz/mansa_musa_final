@@ -44,6 +44,7 @@ class _SelectionPageState extends State<SelectionPage> {
             },
           )
         ],
+         leading: Text(""),
       ),
       body: Container(
         decoration: BoxDecoration(

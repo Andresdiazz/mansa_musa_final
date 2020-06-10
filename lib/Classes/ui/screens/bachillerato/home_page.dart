@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage> {
             Navigator.push(context, MaterialPageRoute(builder: (context) => Pago()));
           })
         ],
+        leading: Text(""),
       ),
       body: Container(
         decoration: BoxDecoration(

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -93,10 +94,10 @@ class ContentScrollEje extends StatelessWidget {
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(5.0),
-                    child: Image(
-                      image: NetworkImage( '${doc.data["img"]}'),
+                    child: CachedNetworkImage(
+                      imageUrl: "${doc.data["img"]}",
                       fit: BoxFit.fill,
-                    ),
+                    )
                   ),
                 ),
               );
