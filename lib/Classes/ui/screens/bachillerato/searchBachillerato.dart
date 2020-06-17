@@ -79,7 +79,7 @@ class _SearchBachilleratoState extends State<SearchBachillerato> {
                  enabled: true,
                  style: TextStyle( color: Colors.white70 , fontSize: 15 ) ,
                  decoration: InputDecoration(
-                     labelText: "Busca el Tema de Interes" ,
+                     labelText: "¿Qué estas buscando?" ,
                      filled: true ,
                      fillColor: Colors.black38 ,
                      prefixIcon: Icon(

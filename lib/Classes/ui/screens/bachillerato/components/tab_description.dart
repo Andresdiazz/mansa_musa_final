@@ -29,10 +29,11 @@ class _TabDescriptionWidgetState extends State<TabDescriptionWidget> {
           child: RaisedButton(onPressed: (){
             print("play video");
           },
-            child: Text("Reproducir video", style: TextStyle(fontSize: 18),),
+            child: Text("Reproducir video", style: TextStyle(fontSize: 18, color: Colors.white),),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
+            color: Colors.deepOrangeAccent,
           ),
         ),
         Row(

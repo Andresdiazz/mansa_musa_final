@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       //backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Center(child: Image.asset("images/logos/logo-blanco.png", width: 90,),
+        title: Center(child: Image.asset("images/logos/logo-blanco.png", height: 70,),
         ),
         actions: [
           IconButton(icon: Icon(FontAwesomeIcons.solidCreditCard, color: Colors.deepOrangeAccent,), onPressed: (){

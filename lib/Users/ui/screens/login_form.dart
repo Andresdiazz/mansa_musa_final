@@ -4,6 +4,7 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:mansamusaapp/Classes/ui/screens/selection_page.dart';
 import 'package:mansamusaapp/Users/bloc/bloc_user.dart';
 import 'package:mansamusaapp/Users/model/user.dart';
+import 'package:mansamusaapp/Users/ui/screens/forgotPassword.dart';
 import 'package:mansamusaapp/onboarding.dart';
 
 import 'register_screen.dart';
@@ -162,6 +163,15 @@ class _LoginFormState extends State<LoginForm> {
                       onPressed: () => _loginGoogle( context ) ,
                       title: " Inicia Sesión con Google" ,
                     ) ,
+                    FlatButton(onPressed: (){
+                      Navigator.push( context , MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              ForgotPassword( ) ) );
+                    }, child: Text("¿Olvidaste la contraseña?", style: TextStyle(
+                      fontStyle: FontStyle.italic,
+                      decoration: TextDecoration.underline
+                    ),), textColor: Colors.white, ),
+                    SizedBox(height: 50,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center ,
                       children: <Widget>[

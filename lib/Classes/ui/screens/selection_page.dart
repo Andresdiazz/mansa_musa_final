@@ -31,7 +31,7 @@ class _SelectionPageState extends State<SelectionPage> {
        appBar: AppBar(
          backgroundColor: widget.colorAppBar,
           title: Center(
-            child: Container(width: 90, height: 90, decoration: BoxDecoration(
+            child: Container(width: 125, height: 125, decoration: BoxDecoration(
               image: DecorationImage(image: widget.logo)
             ),),
           ),

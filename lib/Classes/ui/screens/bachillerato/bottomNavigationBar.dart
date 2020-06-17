@@ -84,8 +84,7 @@ class Chat extends StatelessWidget {
           title: Center(
               child: Image.asset(
             "images/logos/logo-blanco.png",
-            height: 80,
-            width: 90,
+            height: 70,
           )),
           backgroundColor: Theme.of(context).primaryColor,
         ),

@@ -59,7 +59,7 @@ class _TabGameWidgetState extends State<TabGameWidget> {
                 builder: (_) => ParPage()
             ));
           },
-            child: Text("Entra y Juega", style: TextStyle(fontSize: 18),),
+            child: Text("Entra y Juega", style: TextStyle(fontSize: 18, color: Colors.white),),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),

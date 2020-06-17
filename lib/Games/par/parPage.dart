@@ -49,140 +49,278 @@ class _ParPageState extends State<ParPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        height: double.infinity,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("images/games/JUEGO-PAREJAS-VERTICAL.jpg"),
-                fit: BoxFit.cover)),
-        child: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-            child: Column(
-              children: <Widget>[
-                points != 800
-                    ? Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[],
-                      )
-                    : Container(),
-                points != 800
-                    ? Column(
-                        children: [
-                          Center(
-                            child: Countdown(
-                              controller: controller,
-                              seconds: 60,
-                              build: (_, double time) => Container(
-                                  height: 40,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.deepOrangeAccent,
-                                  ),
-                                  child: Center(
-                                      child: Text(
-                                        time.toString(),
-                                        style: TextStyle(
-                                            fontSize: 30, color: Colors.white),
-                                      ))),
-                              interval: Duration(
-                                milliseconds: 100,
-                              ),
-                              onFinished: () {
-                                Navigator.push(context, MaterialPageRoute(
-                                    builder: (_) => LosePage()
-                                ));
-                              },
+      body: OrientationBuilder(builder: (context, orientation){
+        if(orientation == Orientation.portrait){
+          return Container(
+            height: double.infinity,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/games/JUEGO-PAREJAS-VERTICAL.jpg"),
+                    fit: BoxFit.cover)),
+            child: SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                child: Column(
+                  children: <Widget>[
+                    points != 800
+                        ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[],
+                    )
+                        : Container(),
+                    points != 800
+                        ? Column(
+                      children: [
+                        Center(
+                          child: Countdown(
+                            controller: controller,
+                            seconds: 60,
+                            build: (_, double time) => Container(
+                                height: 40,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.deepOrangeAccent,
+                                ),
+                                child: Center(
+                                    child: Text(
+                                      time.toString(),
+                                      style: TextStyle(
+                                          fontSize: 30, color: Colors.white),
+                                    ))),
+                            interval: Duration(
+                              milliseconds: 100,
                             ),
+                            onFinished: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (_) => LosePage()
+                              ));
+                            },
                           ),
-                          SizedBox(
-                            height: 5,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        GridView.count(
+                          shrinkWrap: true,
+                          //physics: ClampingScrollPhysics(),
+                          scrollDirection: Axis.vertical,
+                          mainAxisSpacing: 0.0,
+                          crossAxisCount: 4,
+                          children:
+                          List.generate(gridViewTiles.length, (index) {
+                            return Tile(
+                              imagePathUrl:
+                              gridViewTiles[index].getImageAssetPath(),
+                              tileIndex: index,
+                              parent: this,
+                            );
+                          }),
+                        ),
+                      ],
+                    )
+                        : Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 100),
+                        child: Card(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15)),
+                            color: Colors.deepOrangeAccent,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 30, horizontal: 40),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment:
+                                CrossAxisAlignment.stretch,
+                                children: <Widget>[
+                                  Text(
+                                    "Lo has completado, pero seguro que puedes hacerlo mejor",
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      //Al momento que da click  si no encuentra la pareja reinicia
+                                      setState(() {
+                                        points = 0;
+                                      });
+                                      Navigator.push(context, MaterialPageRoute(
+                                          builder: (_) => ParPage()
+                                      ));
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: 200,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        color: Theme.of(context).primaryColor,
+                                        borderRadius:
+                                        BorderRadius.circular(10),
+                                      ),
+                                      child: Text(
+                                        "Volver a empezar",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          );
+        }else{
+          return Container(
+            height: double.infinity,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/games/JUEGO-PAREJAS_HORIZONTAL.jpg"),
+                    fit: BoxFit.cover)),
+            child: SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                child: Column(
+                  children: <Widget>[
+                    points != 800
+                        ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[],
+                    )
+                        : Container(),
+                    points != 800
+                        ? Column(
+                      children: [
+                        Center(
+                          child: Countdown(
+                            controller: controller,
+                            seconds: 60,
+                            build: (_, double time) => Container(
+                                height: 40,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.deepOrangeAccent,
+                                ),
+                                child: Center(
+                                    child: Text(
+                                      time.toString(),
+                                      style: TextStyle(
+                                          fontSize: 30, color: Colors.white),
+                                    ))),
+                            interval: Duration(
+                              milliseconds: 100,
+                            ),
+                            onFinished: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (_) => LosePageHorizontal()
+                              ));
+                            },
                           ),
-                          GridView(
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 120),
+                          child: GridView.count(
                             shrinkWrap: true,
                             //physics: ClampingScrollPhysics(),
                             scrollDirection: Axis.vertical,
-                            gridDelegate:
-                                SliverGridDelegateWithMaxCrossAxisExtent(
-                                    mainAxisSpacing: 0.0,
-                                    maxCrossAxisExtent: 100.0),
+                            mainAxisSpacing: 0.0,
+                            crossAxisCount: 8,
                             children:
-                                List.generate(gridViewTiles.length, (index) {
+                            List.generate(gridViewTiles.length, (index) {
                               return Tile(
                                 imagePathUrl:
-                                    gridViewTiles[index].getImageAssetPath(),
+                                gridViewTiles[index].getImageAssetPath(),
                                 tileIndex: index,
                                 parent: this,
                               );
                             }),
                           ),
-                        ],
-                      )
-                    : Center(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 100),
-                          child: Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15)),
-                              color: Colors.deepOrangeAccent,
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 30, horizontal: 40),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: <Widget>[
-                                    Text(
-                                      "Lo has completado, pero seguro que puedes hacerlo mejor",
-                                      style: TextStyle(
-                                          fontSize: 30,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w600),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                    SizedBox(
-                                      height: 30,
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        //Al momento que da click  si no encuentra la pareja reinicia
-                                        setState(() {
-                                          points = 0;
-                                        });
-                                        Navigator.push(context, MaterialPageRoute(
-                                            builder: (_) => ParPage()
-                                        ));
-                                      },
-                                      child: Container(
-                                        height: 50,
-                                        width: 200,
-                                        alignment: Alignment.center,
-                                        decoration: BoxDecoration(
-                                          color: Theme.of(context).primaryColor,
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                        ),
-                                        child: Text(
-                                          "Volver a empezar",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.w500),
-                                        ),
+                        ),
+                      ],
+                    )
+                        : Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 150, top: 30, right: 30),
+                        child: Card(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15)),
+                            color: Colors.deepOrangeAccent,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 30, horizontal: 40),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment:
+                                CrossAxisAlignment.stretch,
+                                children: <Widget>[
+                                  Text(
+                                    "Lo has completado, pero seguro que puedes hacerlo mejor",
+                                    style: TextStyle(
+                                        fontSize: 30,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      //Al momento que da click  si no encuentra la pareja reinicia
+                                      setState(() {
+                                        points = 0;
+                                      });
+                                      Navigator.push(context, MaterialPageRoute(
+                                          builder: (_) => ParPage()
+                                      ));
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: 200,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        color: Theme.of(context).primaryColor,
+                                        borderRadius:
+                                        BorderRadius.circular(10),
+                                      ),
+                                      child: Text(
+                                        "Volver a empezar",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w500),
                                       ),
                                     ),
-                                  ],
-                                ),
-                              )),
-                        ),
-                      )
-              ],
+                                  ),
+                                ],
+                              ),
+                            )),
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-        ),
-      ),
+          );
+        }
+      })
     );
   }
 }
@@ -203,7 +341,7 @@ class _TileState extends State<Tile> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        FlutterBeep.beep();
+        FlutterBeep.playSysSound(43);
         if (!selected) {
           setState(() {
             myPairs[widget.tileIndex].setIsSelected(true);
@@ -224,6 +362,7 @@ class _TileState extends State<Tile> {
                 print(selectedIndex);
                 myPairs[selectedIndex] = tileModel;
                 this.widget.parent.setState(() {});
+                FlutterBeep.beep();
                 setState(() {
                   selected = false;
                 });
@@ -290,6 +429,83 @@ class LosePage extends StatelessWidget {
                     fit: BoxFit.cover)),
           ),
           Center(
+            child: Container(
+              height: MediaQuery.of(context).size.height / 3,
+              width: MediaQuery.of(context).size.width / 1.2,
+              child: Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  color: Colors.deepOrangeAccent,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 0, horizontal: 40),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment:
+                      CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        Text(
+                          "Se acabó el tiempo, esfuerzate un poco más",
+                          style: TextStyle(
+                              fontSize: 22,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            //Al momento que da click  si no encuentra la pareja reinicia
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (_) => ParPage()
+                            ));
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 200,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).primaryColor,
+                              borderRadius:
+                              BorderRadius.circular(10),
+                            ),
+                            child: Text(
+                              "Volver a empezar",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class LosePageHorizontal extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            height: double.infinity,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/games/JUEGO-PAREJAS_HORIZONTAL.jpg"),
+                    fit: BoxFit.cover)),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 150, top: 100, right: 50),
             child: Container(
               height: MediaQuery.of(context).size.height / 3,
               width: MediaQuery.of(context).size.width / 1.2,
