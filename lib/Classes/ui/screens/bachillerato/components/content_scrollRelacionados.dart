@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mansamusaapp/Classes/ui/screens/bachillerato/thirdPage.dart';
 
+import '../relacionadosPage.dart';
 import '../secondPage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -69,7 +70,7 @@ class ContentScrollRelacionTematico extends StatelessWidget {
                         onTap: (){
                           print(doc.documentID);
                           Navigator.push(context, MaterialPageRoute(
-                              builder: (_) => ThirdPage(
+                              builder: (_) => relacionadosPage(
                                 id: id,
                                 title: doc.data['title'],
                                 description: doc.data['description'],

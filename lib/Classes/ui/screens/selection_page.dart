@@ -69,7 +69,7 @@ class _SelectionPageState extends State<SelectionPage> {
                             width: 150,
                             height: 150,
                             decoration: BoxDecoration( borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(image: AssetImage("images/img/PREESCOLAR.jpg"),
+                                image: DecorationImage(image: AssetImage("images/img/3.png"),
                                     fit: BoxFit.cover)),
 
 
@@ -88,7 +88,7 @@ class _SelectionPageState extends State<SelectionPage> {
                             width: 150,
                             height: 150,
                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(image: AssetImage("images/img/PRIMARIA.png"),
+                                image: DecorationImage(image: AssetImage("images/img/GIRL.png"),
                                     fit: BoxFit.cover)),
                           ),
                         ),
@@ -108,7 +108,7 @@ class _SelectionPageState extends State<SelectionPage> {
                         width: 150,
                         height: 150,
                         decoration: BoxDecoration( borderRadius: BorderRadius.circular(8),
-                            image: DecorationImage(image: AssetImage("images/img/BACHILLERATO.png"),
+                            image: DecorationImage(image: AssetImage("images/img/KID.png"),
                                 fit: BoxFit.cover)),
 
                       ),

@@ -339,7 +339,7 @@ class OnboardingPageState extends State<OnboardingPage>
                                   MaterialPageRoute(
                                       builder: (context) => LoginScreen())),
                               child: Text(
-                                'Iniciar Sesi��n',
+                                'Iniciar Sesión',
                                 style: TextStyle(fontSize: 18),
                               ),
                               shape: RoundedRectangleBorder(
