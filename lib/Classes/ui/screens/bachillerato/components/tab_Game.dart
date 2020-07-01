@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mansamusaapp/Games/par/parPage.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:mansamusaapp/Games/trivia/quizpage.dart';
 
+import '../home_page.dart';
 import 'content_scroll.dart';
 import 'content_scrollJugando.dart';
 import 'content_scrollTemas.dart';
 
-
 class TabGameWidget extends StatefulWidget {
-
   final String title;
   final String description;
+  final int id;
 
-  TabGameWidget({Key key, this.title, this.description});
+  TabGameWidget({Key key, this.title, this.description, this.id});
 
   @override
   _TabGameWidgetState createState() => _TabGameWidgetState();
@@ -46,20 +47,44 @@ class _TabGameWidgetState extends State<TabGameWidget> {
                     decoration: BoxDecoration(color: Colors.white)))
           ],
         ),
-        SizedBox(height: 10,),
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Text(widget.description, style: TextStyle(fontSize: 16, color: Colors.white, ),textAlign: TextAlign.justify,),
+        SizedBox(
+          height: 10,
         ),
-        SizedBox(height: 10,),
         Padding(
           padding: const EdgeInsets.only(left: 10),
-          child: RaisedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(
-                builder: (_) => ParPage()
-            ));
-          },
-            child: Text("Entra y Juega", style: TextStyle(fontSize: 18, color: Colors.white),),
+          child: Text(
+            widget.description,
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.justify,
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: RaisedButton(
+            onPressed: () {
+              switch (widget.id) {
+                case 1:
+                  print(widget.id);
+                  Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => ParPage()));
+                  break;
+                case 2:
+                  print(widget.id);
+                  Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => getjson()));
+                  break;
+              }
+            },
+            child: Text(
+              "Entra y Juega",
+              style: TextStyle(fontSize: 18, color: Colors.white),
+            ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
@@ -93,10 +118,7 @@ class _TabGameWidgetState extends State<TabGameWidget> {
           padding: 15,
           paddingContainer: 6,
         ),
-
-
       ],
     );
-
   }
 }

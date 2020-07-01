@@ -5,7 +5,7 @@ import 'components/tab_ejeTematico.dart';
 
 class GamePage extends StatefulWidget {
 
-  final String id;
+  final int id;
 
   final String title;
   final String img;
@@ -86,6 +86,7 @@ class _GamePageState extends State<GamePage> {
               child: TabGameWidget(
                 title: widget.title,
                 description: widget.description,
+                id: widget.id
               ),
             ),
 

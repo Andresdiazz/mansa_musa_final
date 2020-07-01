@@ -1,0 +1,660 @@
+[
+    {
+        "1": "¿Quienes eran los moros?",
+        "2": "¿Cual fue el primer afrodescendiente en jugar en el real Madrid?",
+        "3": "¿José producencio padilla era oriundo de ?",
+        "4": "¿El faraón tutankamon murió a la edad de ?",
+        "5": "¿Como se llamaba le inventor de las papas fritas ?",
+        "6": "¿los moros gobernaron el antiguo Andalus por?",
+        "7": "¿Los mandigas son originarios de ?",
+        "8": "¿En que parte de África se habla el idioma árabe ?",
+        "9": "¿Quien fue el señor Nelson Mandela ?",
+        "10": "Son el grupo étnico más grande de África occidental",
+        "11": "¿Quién dijo la famosa frase a los cristianos “aquí comemos fuego”?",
+        "12": "El Imperio Kanem-Bornu existió en África entre el siglo",
+        "13": "¿Vicente Guerrero fue?",
+        "14": "¿Quien liberto Haití?",
+        "15": "Dutty Boukman fue un sacerdote vudú de",
+        "16": "Los grandes dinka son una tribu originaria de Sudán del Sur que vive desde",
+        "17": "Los Nilotes o niloticos son los pueblos",
+        "18": "La tribu Mursi son famosos por",
+        "19": "Los tuareg son un",
+        "20": "carlota Lukumi fue una",
+        "21": "Catherine Flon quien",
+        "22": "Eritrea es una pequeña nación en la costa africana del",
+        "23": "Los ndebele son una etnia conformada por tres grupos tribales de",
+        "24": "Los Kiyükü son el grupo étnico más numeroso",
+        "25": "Mabel Lara es una",
+        "26": "Alejando dumas es de origen",
+        "27": "Betty Garcés es una soprano oriunda de",
+        "28": "El nombre nefertiti significa",
+        "29": "El antiguo egipto era conocido antes como",
+        "30": "Lidia Newman invento",
+        "31": "Nathaniel Alexander ynchburg invento",
+        "32": "El Dr. Solomon Carter Fuller fue",
+        "33": "Bertín Nahúm creo el famoso robot llamado rosa que",
+        "34": "La vice ministra Carmen Inés Vásquez es oriunda",
+        "35": "La Dra. Alicia Ríos Hurtado fue directora de",
+        "36": "El grupo herencia de timbiqui fue ganador de la gaviota de",
+        "37": "Quien es la señora Martha Lucía Aguilar Murillo",
+        "38": "Mr. Black es un cantante de música",
+        "39": "Cali Flow Latino es una agrupaciñon de",
+        "40": "Catherine Ibargüen, es campeona mundial de",
+        "41": "Fernando Montaño es",
+        "42": "Cuantos países tiene el continente africano",
+        "43": "El templo de Abu simbel fue construido por el faraón",
+        "44": "El instrumento marimba es originario del",
+        "45": "Los moros establecieron un imperio desde",
+        "46": "La palabra moreno o morocho viene despectivamente de",
+        "47": "Los guerreros batí son los guerreros tradicionales de",
+        "48": "El termino Tuareg o Targi en singular, se aplica a numerosos grupos que",
+        "49": "Paula marcela moreno, fue la primera mujer afro de Colombia minstra de",
+        "50": "la Unesco declaró el pueblo de palenque como",
+        "51": "la primera ciudad libre de las americas fue",
+        "52": "Donde se encontraron los primeros restos humanos",
+        "53": "los primeros en participar en la mineria hace 43.000 años fueron",
+        "54": "el antiguo imperio de Mali estaba conformado por",
+        "55": "Teófilo Gutiérrez es jugador de",
+        "56": "Óscar Gamboa fue director del Programa Presidencial",
+        "57": "Edgar Perea fue un recoocido",
+        "58": "Los rompecabezas se han utilizado en África desde la época de",
+        "59": "Manuel zapata olivella, fue el primero de hablar sobre la etnoeducación afro en",
+        "60": "La primera reina colombiana afro (negra) en llegar a Miss Universo fue",
+        "61": "La primera presea dorada en la historia olímpica de Colombia fue atraves",
+        "62": "Yuri buenaventura es una cantante oriundo de",
+        "63": "Antonio Cervantes Reyes 'Kid Pambelé' fue",
+        "64": "La primera colonia del contienente americano donde llegaron esclavos africanos",
+        "65": "Cuantos palenque existieron en Colombia",
+        "66": "La primera mujer de Afro en llegar al canal RCN como presentadora de noticas",
+        "67": "Garret Morgan fue el inventor del",
+        "68": "Quien fue el primer afrocolombiano en trabajar para la nasa",
+        "69": "Muhammad Ali fue",
+        "70": "En 1993 el Comité Noruego del Nobel le entregó el Premio Nobel de la Paz",
+        "71": "Edwing D'Angelo es un diseñador de moda colombiano readicado en",
+        "72": "El municipio de Quibdó se encuenta ubicado en",
+        "73": "El DNP estima que la población afrocolombiana es de",
+        "74": "Jercy Puello Ortiz es",
+        "75": "catalina loango fue",
+        "76": "Néstor urbano tenorio creo",
+        "77": "Sofonás yacup carabalí era oriundo de",
+        "78": "como se conoce a Petronio Álvarez",
+        "79": "Nigeria Rentería fue nombrada como Consejera Presidencial",
+        "80": "Malcom X fue",
+        "81": "Menelik II fue emperador de"
+
+        
+    },
+    {
+        "1": {
+            "a": "Arabes",
+            "b": "Españoles",
+            "c": "Africanos del norte",
+            "d": "Africanos occidentales"
+        },
+        "2": {
+            "a": "Freddy Rincon",
+            "b": "Faustino Asprilla",
+            "c": "Edwin Congo",
+            "d": "Didi Waldir Pereira"
+        },
+        "3": {
+            "a": "Cali",
+            "b": "Bogotá",
+            "c": "Buenaventura",
+            "d": "Riohacha"
+        },
+        "4": {
+            "a": "20 años",
+            "b": "30 años",
+            "c": "19 años",
+            "d": "60 años"
+        },
+        "5": {
+            "a": "Juan De La Cruz",
+            "b": "George Crum",
+            "c": "Luis Lattimer",
+            "d": "Garrett Morgan"
+        },
+        "6": {
+            "a": "5 siglos",
+            "b": "6 siglos",
+            "c": "30 años",
+            "d": "700 años"
+        },
+        "7": {
+            "a": "Africa Central",
+            "b": "America",
+            "c": "Africa Occidental",
+            "d": "Africa Oriental"
+        },
+        "8": {
+            "a": "Africa del Norte",
+            "b": "Africa Central",
+            "c": "Senegal",
+            "d": "Nigeria"
+        },
+        "9": {
+            "a": "Actor",
+            "b": "Profesor",
+            "c": "Líder Político",
+            "d": "Futbolista"
+        },
+        "10": {
+            "a": "Mandigas",
+            "b": "Fulani",
+            "c": "Yoruba",
+            "d": "Hausa"
+        },
+        "11": {
+            "a": "Nelson Mandela",
+            "b": "Shaka Zulu",
+            "c": "Sansón",
+            "d": "Mansa Musa"
+        },
+        "12": {
+            "a": "siglo XIV y la década de 1840",
+            "b": "siglo 19 y década de los 1990",
+            "c": "siglo 12",
+            "d": "siglo 15 y década de los 1930"
+        },
+        "13": {
+            "a": "general en la Guerra de Independencia de México",
+            "b": "coronel de Colombia",
+            "c": "general de España",
+            "d": "almirante"
+        },
+        "14": {
+            "a": "El general Petion",
+            "b": "simón bolívar",
+            "c": "Toussaint L'Ouverture",
+            "d": "Santander"
+        },
+        "15": {
+            "a": "Colombia",
+            "b": "África",
+            "c": "Haití",
+            "d": "America Latina"
+        },
+        "16": {
+            "a": "siglo 11",
+            "b": "siglo 10",
+            "c": "siglo 3",
+            "d": "siglo 16"
+        },
+        "17": {
+            "a": "Este de África central, sur de Sudán",
+            "b": "sur de Nigeria",
+            "c": "norte de Uganda",
+            "d": "oeste de Kenia"
+        },
+        "18": {
+            "a": "su gran ganado",
+            "b": "por los platos en sus bocas",
+            "c": "por sus trenzas",
+            "d": "por su gran altura"
+        },
+        "19": {
+            "a": "pueblo bereber en el desierto del Sáhara",
+            "b": "Pueblo de nigeria",
+            "c": "Pueblo de Egipto",
+            "d": "Pueblo de américa"
+        },
+        "20": {
+            "a": "activista",
+            "b": "lider de la revolución francesa",
+            "c": "lider de la provincia de Matanzas en cuba",
+            "d": "actriz"
+        },
+        "21": {
+            "a": "Reina haitiana",
+            "b": "Cosió la bandera de Francia",
+            "c": "cosió la primera bandera haitiana",
+            "d": "politica nigeriana"
+        },
+        "22": {
+            "a": "Mar Rojo",
+            "b": "Lago popo",
+            "c": "Lago Niger",
+            "d": "Centro de África"
+        },
+        "23": {
+            "a": "Sudáfrica y Zimbabue",
+            "b": "Egipto Madagascar",
+            "c": "Túnez y libia",
+            "d": "Chad y Niger"
+        },
+        "24": {
+            "a": "Senegal",
+            "b": "Etiopia",
+            "c": "Benin",
+            "d": "Kenia"
+        },
+        "25": {
+            "a": "Modelo",
+            "b": "Periodista",
+            "c": "Activista",
+            "d": "Lider espiritual"
+        },
+        "26": {
+            "a": "Italiano",
+            "b": "Español",
+            "c": "Francés",
+            "d": "Ingles"
+        },
+        "27": {
+            "a": "Cali",
+            "b": "Bogotá",
+            "c": "Quibdó",
+            "d": "Buenaventura"
+        },
+        "28": {
+            "a": "La mujer de ébano",
+            "b": "La bella ha llegado",
+            "c": "Esposa del faraón",
+            "d": "Mujer divina"
+        },
+        "29": {
+            "a": "Kemet",
+            "b": "Delta del Nilo",
+            "c": "Amasis",
+            "d": "La tierra fértil"
+        },
+        "30": {
+            "a": "El cepillo de pelo desmontable",
+            "b": "El ventilador",
+            "c": "La silla plegable",
+            "d": "El semáforo"
+        },
+        "31": {
+            "a": "La silla plegable",
+            "b": "La guitarra",
+            "c": "El candado",
+            "d": "La cuchara para helados"
+        },
+        "32": {
+            "a": "el primer psquiatra Negro de usa",
+            "b": "el primer ingeniero negro en Colombia",
+            "c": "el primer capitán negro en suiza",
+            "d": "el primer profesor negro en España"
+        },
+        "33": {
+            "a": "Ayuda a realizar cirugías cerebrales",
+            "b": "Ayuda a realizar cirugías cardiacas",
+            "c": "Ayuda a realizar cirugías de tórax",
+            "d": "Ayuda a realizar cirugias GX"
+        },
+        "34": {
+            "a": "Cali",
+            "b": "Tumaco",
+            "c": "Buenaventura",
+            "d": "Medellin"
+        },
+        "35": {
+            "a": "Colciencias",
+            "b": "Icebf",
+            "c": "Colsanitas",
+            "d": "Casa del valle"
+        },
+        "36": {
+            "a": "Oro",
+            "b": "Oro y plata",
+            "c": "Plata",
+            "d": "Ninguna de las anteriores"
+        },
+        "37": {
+            "a": "chef",
+            "b": "Profesora",
+            "c": "Abogada",
+            "d": "Ninguna de las anteriores"
+        },
+        "38": {
+            "a": "Urbana",
+            "b": "Salsa",
+            "c": "Salsa choqué",
+            "d": "Champeta urbana"
+        },
+        "39": {
+            "a": "Salsa",
+            "b": "Champeta",
+            "c": "Jazz",
+            "d": "Salsa Choke"
+        },
+        "40": {
+            "a": "salto triple",
+            "b": "salto con garrocha",
+            "c": "baloncesto",
+            "d": "salto con obstaculos"
+        },
+        "41": {
+            "a": "primer colombiano en el Royal Ballet de Londres actor",
+            "b": "cantante",
+            "c": "periodista",
+            "d": "ministro"
+        },
+        "42": {
+            "a": "30",
+            "b": "20",
+            "c": "54",
+            "d": "49"
+        },
+        "43": {
+            "a": "rameses 2",
+            "b": "Rameses",
+            "c": "Taharqua",
+            "d": "Cleopatra"
+        },
+        "44": {
+            "a": "África",
+            "b": "América central",
+            "c": "Pacifico colombiano",
+            "d": "Imperio de Mali"
+        },
+        "45": {
+            "a": "El norte de África hasta el sur de Europa",
+            "b": "sur de Europa",
+            "c": "Africa central y Europa",
+            "d": "España y Italia"
+        },
+        "46": {
+            "a": "los moros",
+            "b": "europeos",
+            "c": "americanos",
+            "d": "francés e italianos"
+        },
+        "47": {
+            "a": "las Islas Fiyi",
+            "b": "galápagos",
+            "c": "cuba",
+            "d": "Antillas menores"
+        },
+        "48": {
+            "a": "Comparten un idioma e historia común Étinicamente",
+            "b": "Comparten una Historia",
+            "c": "Comparten una Casa",
+            "d": "Comparten una historia"
+        },
+        "49": {
+            "a": "cultura",
+            "b": "Educación",
+            "c": "Salud",
+            "d": "Ninguna de las anteriores"
+        },
+        "50": {
+            "a": "obra maestra del patrimonio oral e inmaterial de la humanidad",
+            "b": "zona de alto riesgo",
+            "c": "zona de conflicto",
+            "d": "zona de confort"
+        },
+        "51": {
+            "a": "San Basilio de palenque",
+            "b": "Cartagena",
+            "c": "Haití",
+            "d": "Quibdó"
+        },
+        "52": {
+            "a": "Omo Etiopía",
+            "b": "África occidental",
+            "c": "Europa",
+            "d": "África central"
+        },
+        "53": {
+            "a": "los asiaticos",
+            "b": "ingleses",
+            "c": "africanos",
+            "d": "incas"
+        },
+        "54": {
+            "a": "Mauritania",
+            "b": "Senegal y Gambia",
+            "c": "Mali, ghana, Mauritania, senegambia",
+            "d": "Senegambia, Nigeria, Benin"
+        },
+        "55": {
+            "a": "Baloncesto",
+            "b": "Beisbol",
+            "c": "Futbol",
+            "d": "Rugby"
+        },
+        "56": {
+            "a": "para la Población Afrocolombiana",
+            "b": "para los desplazados",
+            "c": "para las comunidades indígenas",
+            "d": "para la población vulnerable"
+        },
+        "57": {
+            "a": "senador y periodista",
+            "b": "médico y conferencista",
+            "c": "líder comunitario",
+            "d": "ministro"
+        },
+        "58": {
+            "a": "faraones egipcios",
+            "b": "invasión griega",
+            "c": "medieval",
+            "d": "invasión persa"
+        },
+        "59": {
+            "a": "1977",
+            "b": "1980",
+            "c": "1700",
+            "d": "2005"
+        },
+        "60": {
+            "a": "Vanessa Mendoza",
+            "b": "Andrea Tovar",
+            "c": "Paulina Vega",
+            "d": "Ninguna de las anteriores"
+        },
+        "61": {
+            "a": "Oscar Figueroa",
+            "b": "Maria Isabel Urrutia",
+            "c": "Katherine Ibarguen",
+            "d": "Yuri Alvear"
+        },
+        "62": {
+            "a": "Cali",
+            "b": "Medellin",
+            "c": "Buenaventura",
+            "d": "Tumaco"
+        },
+        "63": {
+            "a": "dos veces campeón mundial del peso welter junior",
+            "b": "dos veces campeón mundial de pesos pesados",
+            "c": "una vez campeón mundial welter",
+            "d": "tres veces campeón amateur"
+        },
+        "64": {
+            "a": "Pánama",
+            "b": "Haití",
+            "c": "Cartagena",
+            "d": "Cuba"
+        },
+        "65": {
+            "a": "10",
+            "b": "12",
+            "c": "15",
+            "d": "14"
+        },
+        "66": {
+            "a": "Mabel Lara",
+            "b": "Edgna Liliana",
+            "c": "Diana mina",
+            "d": "Ninguna de las anteriores"
+        },
+        "67": {
+            "a": "Ascensor",
+            "b": "Semáforo",
+            "c": "Teléfono",
+            "d": "Bombillo"
+        },
+        "68": {
+            "a": "Arnoldo de los Santos Palacios Mosquera",
+            "b": "Luis Alexander Hurtado",
+            "c": "Bonnie Prado Pino",
+            "d": "Raúl cuero"
+        },
+        "69": {
+            "a": "tres veces campeón del mundo de pesos pesados",
+            "b": "una leyenda del boxeo a nivel mundial",
+            "c": "A y b",
+            "d": "una diplómatico"
+        },
+        "70": {
+            "a": "Juan Manuel santos",
+            "b": "Nelson Mandela",
+            "c": "Gabriel Garcia Marquez",
+            "d": "Masala Yousafzai"
+        },
+        "71": {
+            "a": "Nueva York",
+            "b": "Italia",
+            "c": "Francia",
+            "d": "España"
+        },
+        "72": {
+            "a": "La costa atlántica",
+            "b": "Costa pacifica",
+            "c": "Costa de marfil",
+            "d": "Norte del valle"
+        },
+        "73": {
+            "a": "12 millones",
+            "b": "20 millones",
+            "c": "10 millones",
+            "d": "15 millones"
+        },
+        "74": {
+            "a": "patinadora cartagenera",
+            "b": "patinadora del Valle del Cauca",
+            "c": "patinadora de Medellin",
+            "d": "patinadora de Bogotá"
+        },
+        "75": {
+            "a": "mujer cimarrona del palenque de san Basilio",
+            "b": "periodista",
+            "c": "senadora",
+            "d": "actriz"
+        },
+        "76": {
+            "a": "el colegio de bachillerato Pascual de Andagoya",
+            "b": "La normal de mujeres",
+            "c": "La alcaldia de buenaventura",
+            "d": "Ninguna de las anteriores"
+        },
+        "77": {
+            "a": "Cali",
+            "b": "Tumaco",
+            "c": "Timbiqui",
+            "d": "Guapi"
+        },
+        "78": {
+            "a": "el violinista",
+            "b": "el maestro",
+            "c": "el cuco",
+            "d": "ninguna de las anteriores"
+        },
+        "79": {
+            "a": "para la Equidad de la Mujer",
+            "b": "para la oficina de negritudes",
+            "c": "para los desplazados",
+            "d": "para el post conflicto"
+        },
+        "80": {
+            "a": "defensor de los derechos de los afroamericanos",
+            "b": "diputado americano",
+            "c": "un inventor",
+            "d": "presidente de usa"
+        },
+        "81": {
+            "a": "Etiopía",
+            "b": "Mali",
+            "c": "África central",
+            "d": "Egipto"
+        }
+
+    },
+    {
+        "1": "Africanos del norte",
+        "2": "Didi Waldir Pereira",
+        "3": "Riohacha",
+        "4": "19 años",
+        "5": "George Crum",
+        "6": "700 años",
+        "7": "Africa Occidental",
+        "8": "Africa del Norte",
+        "9": "Líder Político",
+        "10": "Hausa",
+        "11": "Shaka Zulu",
+        "12": "siglo XIV y la década de 1840",
+        "13": "general en la Guerra de Independencia de México",
+        "14": "Toussaint L'Ouverture",
+        "15": "Haití",
+        "16": "siglo 10",
+        "17": "Este de África central, sur de Sudán",
+        "18": "por los platos en sus bocas",
+        "19": "pueblo bereber en el desierto del Sáhara",
+        "20": "lider de la provincia de Matanzas en cuba",
+        "21": "cosió la primera bandera haitiana",
+        "22": "Mar Rojo",
+        "23": "Sudáfrica y Zimbabue",
+        "24": "Kenia",
+        "25": "Periodista",
+        "26": "Francés",
+        "27": "Buenaventura",
+        "28": "La bella ha llegado",
+        "29": "Kemet",
+        "30": "El cepillo de pelo desmontable",
+        "31": "La silla plegable",
+        "32": "el primer psquiatra Negro de usa",
+        "33": "Ayuda a realizar cirugías cerebrales",
+        "34": "Buenaventura",
+        "35": "Colciencias",
+        "36": "Plata",
+        "37": "chef",
+        "38": "Champeta urbana",
+        "39": "Salsa Choke",
+        "40": "salto triple",
+        "41": "primer colombiano en el Royal Ballet de Londres actor",
+        "42": "54",
+        "43": "rameses 2",
+        "44": "Pacifico colombiano",
+        "45": "El norte de África hasta el sur de Europa",
+        "46": "los moros",
+        "47": "las Islas Fiyi",
+        "48": "Comparten un idioma e historia común Étinicamente",
+        "49": "cultura",
+        "50": "obra maestra del patrimonio oral e inmaterial de la humanidad",
+        "51": "San Basilio de palenque",
+        "52": "Omo Etiopía",
+        "53": "africanos",
+        "54": "Mali, ghana, Mauritania, senegambia",
+        "55": "Futbol",
+        "56": "para la Población Afrocolombiana",
+        "57": "senador y periodista",
+        "58": "faraones egipcios",
+        "59": "1977",
+        "60": "Vanessa Mendoza",
+        "61": "Maria isabel Urrutia",
+        "62": "Buenaventura",
+        "63": "dos veces campeón mundial del peso welter junior",
+        "64": "Panamá",
+        "65": "14",
+        "66": "Edna Liliana",
+        "67": "Semáforo",
+        "68": "Raúl cuero",
+        "69": "A y b",
+        "70": "Nelson Mandela",
+        "71": "Nueva York",
+        "72": "Costa pacifica",
+        "73": "12 millones",
+        "74": "patinadora cartagenera",
+        "75": "mujer cimarrona del palenque de san Basilio",
+        "76": "el colegio de bachillerato Pascual de Andagoya",
+        "77": "Guapi",
+        "78": "el cuco",
+        "79": "para la Equidad de la Mujer",
+        "80": "defensor de los derechos de los afroamericanos",
+        "81": "Etiopía"
+
+    }
+]

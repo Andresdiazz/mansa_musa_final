@@ -12,13 +12,14 @@ class ContentScrolJugando extends StatelessWidget {
   final double imageWidth;
   final double padding;
   final double paddingContainer;
+  final int id;
 
   ContentScrolJugando({
     this.title,
     this.imageHeight,
     this.imageWidth,
     this.padding,
-    this.paddingContainer
+    this.paddingContainer, this.id
   });
 
   @override
@@ -72,6 +73,7 @@ class ContentScrolJugando extends StatelessWidget {
                             subtitle: doc.data['subtitle'],
                             description: doc.data['description'],
                             img:doc.data['img'],
+                            id: doc.data['id'],
                       )
                   ));
                 },
