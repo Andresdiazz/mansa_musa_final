@@ -42,7 +42,7 @@ List<TileModel>  getPairs(){
   tileModel = new TileModel();
 
   //3
-  tileModel.setImageAssetPath("images/img/PRIMARIA.png");
+  tileModel.setImageAssetPath("images/horse.png");
   tileModel.setIsSelected(false);
   pairs.add(tileModel);
   pairs.add(tileModel);

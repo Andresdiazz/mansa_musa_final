@@ -97,7 +97,7 @@ class _quizpageState extends State<quizpage> {
     var distinctIds = [];
     var rand = new Random();
       for (int i = 0; ;) {
-      distinctIds.add(rand.nextInt(10));
+      distinctIds.add(rand.nextInt(80));
         random_array = distinctIds.toSet().toList();
         if(random_array.length < 10){
           continue;
@@ -216,10 +216,9 @@ class _quizpageState extends State<quizpage> {
           mydata[1][i.toString()][k],
           style: TextStyle(
             color: Colors.white,
-            fontFamily: "Alike",
             fontSize: 16.0,
           ),
-          maxLines: 1,
+          maxLines: 2,
         ),
         color: btncolor[k],
         splashColor: Colors.indigo[700],
@@ -273,8 +272,8 @@ class _quizpageState extends State<quizpage> {
                     mydata[0][i.toString()],
                     style: TextStyle(
                       fontSize: 16.0,
-                      fontFamily: "Quando",
-                      color: Colors.white
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold
                     ),
                   ),
                 ),
@@ -282,14 +281,17 @@ class _quizpageState extends State<quizpage> {
               Expanded(
                 flex: 7,
                 child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      choicebutton('a'),
-                      choicebutton('b'),
-                      choicebutton('c'),
-                      choicebutton('d'),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 90),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        choicebutton('a'),
+                        choicebutton('b'),
+                        choicebutton('c'),
+                        choicebutton('d'),
+                      ],
+                    ),
                   ),
                 ),
               ),
