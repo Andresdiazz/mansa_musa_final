@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:mansamusaapp/Classes/ui/screens/bachillerato/bottomNavigationBar.dart';
-import 'package:mansamusaapp/Classes/ui/screens/bachillerato/thirdPage.dart';
-import 'package:mansamusaapp/Classes/ui/screens/preescolar/navigationBarPreescolar.dart';
-import 'package:mansamusaapp/Classes/ui/screens/primaria/navigationBarPrimaria.dart';
-import 'package:mansamusaapp/Classes/ui/screens/selection_page.dart';
-import 'package:mansamusaapp/Users/bloc/bloc_user.dart';
-import 'package:mansamusaapp/Users/ui/screens/login_form.dart';
-import 'package:mansamusaapp/onboarding.dart';
+
+import '../Classes/ui/screens/bachillerato/home_page.dart';
+import '../Classes/ui/screens/bachillerato/thirdPage.dart';
+import '../Classes/ui/screens/preescolar/home_page.dart';
+import '../Classes/ui/screens/primaria/home_page.dart';
+import '../Classes/ui/screens/selection_page.dart';
+import '../Users/bloc/bloc_user.dart';
+import '../onboarding.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -22,17 +22,12 @@ class MyApp extends StatelessWidget {
         title: "Mansa Musa App",
         home: OnboardingPage(),
         routes: <String, WidgetBuilder>{
-          '/home': (BuildContext context) => new SelectionPage(
-            colorAppBar: Color(0xff002E62),
-            colorBackground: Color(0xff002E62),
-            logo: AssetImage("images/logos/logo-blanco.png"),
-            color: Colors.white,
-          ),
+          '/home': (BuildContext context) => new SelectionPage(),
           '/secondPage': (BuildContext context) => ThirdPage(),
-          '/HomePagePreescolar' : (BuildContext context) => new NavigationBarPreescolar(),
-          '/HomePagePrimaria' : (BuildContext context) => new NavigationBarPrimaria(),
-          '/HomePageBachillerato' : (BuildContext context) => new NavigationBarBachiller(),
-
+          '/HomePagePreescolar': (BuildContext context) =>
+              new HomePagePreescolar(),
+          '/HomePagePrimaria': (BuildContext context) => new HomePagePrimaria(),
+          '/HomePageBachillerato': (BuildContext context) => new HomePage(),
         },
       ),
       bloc: UserBloc(),

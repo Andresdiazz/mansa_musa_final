@@ -1,19 +1,17 @@
-
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:mansamusaapp/Users/bloc/bloc_user.dart';
-import 'package:mansamusaapp/Users/model/user.dart';
 
+import '../../../../Users/bloc/bloc_user.dart';
+import '../../../../Users/model/user.dart';
 import 'jitsi_meet.dart';
 import 'jitsi_meeting_listener.dart';
 
-class ChatPage extends StatefulWidget{
+class ChatPage extends StatefulWidget {
   @override
   _ChatPageState createState() => _ChatPageState();
 }
 
 class _ChatPageState extends State<ChatPage> {
-
   UserBloc userBloc;
 
   User user;
@@ -22,12 +20,11 @@ class _ChatPageState extends State<ChatPage> {
 
   final TextEditingController roomText = TextEditingController();
 
-  final  TextEditingController subjectText = TextEditingController();
+  final TextEditingController subjectText = TextEditingController();
 
   final TextEditingController nameText = TextEditingController();
 
   final TextEditingController emailText = TextEditingController();
-
 
   var isAudioOnly = true;
 
@@ -55,34 +52,33 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
-    userBloc = BlocProvider.of<UserBloc>( context );
+    userBloc = BlocProvider.of<UserBloc>(context);
 
     return StreamBuilder(
-      stream: userBloc.streamFirebase ,
-      builder: (BuildContext context , AsyncSnapshot snapshot) {
+      stream: userBloc.streamFirebase,
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
-          // TODO: Handle this case.
-            return CircularProgressIndicator( );
+            // TODO: Handle this case.
+            return CircularProgressIndicator();
           case ConnectionState.waiting:
-          // TODO: Handle this case.
-            return CircularProgressIndicator( );
+            // TODO: Handle this case.
+            return CircularProgressIndicator();
           case ConnectionState.active:
-          // TODO: Handle this case.
-            user = User( email: snapshot.data.email );
+            // TODO: Handle this case.
+            user = User(email: snapshot.data.email);
             return Form(
-              key: _formKey ,
+              key: _formKey,
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 30 , vertical: 20 ) ,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: SingleChildScrollView(
                   child: Card(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric( horizontal: 16 ) ,
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch ,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-
                           /*TextFormField(
                         textCapitalization: TextCapitalization.words,
                         controller: serverText,
@@ -94,137 +90,127 @@ class _ChatPageState extends State<ChatPage> {
                             hintText: "Hint: Leave empty for meet.jitsi.si"),
                       ),*/
                           SizedBox(
-                            height: 10.0 ,
-                          ) ,
+                            height: 10.0,
+                          ),
                           TextFormField(
-                            textCapitalization: TextCapitalization.words ,
-                            controller: roomText ,
+                            textCapitalization: TextCapitalization.words,
+                            controller: roomText,
                             decoration: InputDecoration(
-                                border: UnderlineInputBorder( ) ,
-                                filled: true ,
-                                icon: Icon( Icons.computer ) ,
-                                labelText: "Sala" ,
-                                hintText: "Escribe el nombre de la sala sin tíldes ni espacios" ,
-                                hintStyle: TextStyle( fontSize: 14 )
-                            ) ,
+                                border: UnderlineInputBorder(),
+                                filled: true,
+                                icon: Icon(Icons.computer),
+                                labelText: "Sala",
+                                hintText:
+                                    "Escribe el nombre de la sala sin tíldes ni espacios",
+                                hintStyle: TextStyle(fontSize: 14)),
                             validator: (_) {
                               return 'Este campo es obligatorio';
-                            } ,
-                            autovalidate: true ,
-                          ) ,
+                            },
+                            autovalidate: true,
+                          ),
                           SizedBox(
-                            height: 10.0 ,
-                          ) ,
+                            height: 10.0,
+                          ),
                           TextFormField(
-                            textCapitalization: TextCapitalization.words ,
-                            controller: subjectText ,
+                            textCapitalization: TextCapitalization.words,
+                            controller: subjectText,
                             decoration: InputDecoration(
-                                border: UnderlineInputBorder( ) ,
-                                filled: true ,
-                                icon: Icon( Icons.chat ) ,
-                                labelText: "Asunto" ,
-                                hintText: "Escribe el asunto de la reunión"
-                            ) ,
-                          ) ,
+                                border: UnderlineInputBorder(),
+                                filled: true,
+                                icon: Icon(Icons.chat),
+                                labelText: "Asunto",
+                                hintText: "Escribe el asunto de la reunión"),
+                          ),
                           SizedBox(
-                            height: 10.0 ,
-                          ) ,
+                            height: 10.0,
+                          ),
                           TextField(
-                            textCapitalization: TextCapitalization.words ,
+                            textCapitalization: TextCapitalization.words,
                             controller: nameText,
                             decoration: InputDecoration(
-                                border: UnderlineInputBorder( ) ,
+                                border: UnderlineInputBorder(),
                                 labelText: user.email,
                                 labelStyle: TextStyle(color: Colors.black),
                                 enabled: false,
-                                filled: true ,
-                                icon: Icon( Icons.person ) ,
-                                hintText: "Ingresa tu nombre"
-
-                            ) ,
-                          ) ,
+                                filled: true,
+                                icon: Icon(Icons.person),
+                                hintText: "Ingresa tu nombre"),
+                          ),
                           SizedBox(
-                            height: 10.0 ,
-                          ) ,
+                            height: 10.0,
+                          ),
                           TextField(
-                            textCapitalization: TextCapitalization.words ,
+                            textCapitalization: TextCapitalization.words,
                             controller: emailText,
-                            keyboardType: TextInputType.emailAddress ,
+                            keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
-                              filled: true ,
-                              border: UnderlineInputBorder( ) ,
-                              labelText: user.email ,
+                              filled: true,
+                              border: UnderlineInputBorder(),
+                              labelText: user.email,
                               labelStyle: TextStyle(color: Colors.black),
                               enabled: false,
-                              icon: Icon( Icons.mail ) ,
+                              icon: Icon(Icons.mail),
                               //hintText: "Ingresa tu correo" ,
-
-                            ) ,
-                          ) ,
-
+                            ),
+                          ),
                           CheckboxListTile(
-                            title: Text( "Solo Audio" ) ,
-                            value: isAudioOnly ,
-                            onChanged: _onAudioOnlyChanged ,
-                          ) ,
-
+                            title: Text("Solo Audio"),
+                            value: isAudioOnly,
+                            onChanged: _onAudioOnlyChanged,
+                          ),
                           CheckboxListTile(
-                            title: Text( "Audio Apagado" ) ,
-                            value: isAudioMuted ,
-                            onChanged: _onAudioMutedChanged ,
-                          ) ,
-
+                            title: Text("Audio Apagado"),
+                            value: isAudioMuted,
+                            onChanged: _onAudioMutedChanged,
+                          ),
                           CheckboxListTile(
-                            title: Text( "Video Apagado" ) ,
-                            value: isVideoMuted ,
-                            onChanged: _onVideoMutedChanged ,
-                          ) ,
+                            title: Text("Video Apagado"),
+                            value: isVideoMuted,
+                            onChanged: _onVideoMutedChanged,
+                          ),
                           Divider(
-                            height: 48.0 ,
-                            thickness: 2.0 ,
-                          ) ,
+                            height: 48.0,
+                            thickness: 2.0,
+                          ),
                           RaisedButton(
                             onPressed: () {
-                              _joinMeeting( );
-                            } ,
+                              _joinMeeting();
+                            },
                             child: Text(
-                              "Unirse a la reunión" ,
-                              style: TextStyle( color: Colors.white ) ,
-                            ) ,
-                            color: Theme
-                                .of( context )
-                                .primaryColor ,
+                              "Unirse a la reunión",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            color: Theme.of(context).primaryColor,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular( 8.0 ) ,
-                            ) ,
-                          ) ,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
                           SizedBox(
-                            height: 48.0 ,
-                          ) ,
-                        ] ,
-                      ) ,
-                    ) ,
-                  ) ,
-                ) ,
-              ) ,
+                            height: 48.0,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             );
             break;
           case ConnectionState.done:
-          // TODO: Handle this case.
-            user = User( email: snapshot.data.email );
+            // TODO: Handle this case.
+            user = User(email: snapshot.data.email);
             return Form(
-              key: _formKey ,
+              key: _formKey,
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 30 , vertical: 20 ) ,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: SingleChildScrollView(
                   child: Card(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric( horizontal: 16 ) ,
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch ,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-
                           /*TextFormField(
                         textCapitalization: TextCapitalization.words,
                         controller: serverText,
@@ -236,127 +222,114 @@ class _ChatPageState extends State<ChatPage> {
                             hintText: "Hint: Leave empty for meet.jitsi.si"),
                       ),*/
                           SizedBox(
-                            height: 10.0 ,
-                          ) ,
+                            height: 10.0,
+                          ),
                           TextFormField(
-                            textCapitalization: TextCapitalization.words ,
-                            controller: roomText ,
+                            textCapitalization: TextCapitalization.words,
+                            controller: roomText,
                             decoration: InputDecoration(
-                                border: UnderlineInputBorder( ) ,
-                                filled: true ,
-                                icon: Icon( Icons.computer ) ,
-                                labelText: "Sala" ,
-                                hintText: "Escribe el nombre de la sala sin tíldes ni espacios" ,
-                                hintStyle: TextStyle( fontSize: 14 )
-                            ) ,
+                                border: UnderlineInputBorder(),
+                                filled: true,
+                                icon: Icon(Icons.computer),
+                                labelText: "Sala",
+                                hintText:
+                                    "Escribe el nombre de la sala sin tíldes ni espacios",
+                                hintStyle: TextStyle(fontSize: 14)),
                             validator: (_) {
                               return 'Este campo es obligatorio';
-                            } ,
-                            autovalidate: true ,
-                          ) ,
+                            },
+                            autovalidate: true,
+                          ),
                           SizedBox(
-                            height: 10.0 ,
-                          ) ,
+                            height: 10.0,
+                          ),
                           TextFormField(
-                            textCapitalization: TextCapitalization.words ,
-                            controller: subjectText ,
+                            textCapitalization: TextCapitalization.words,
+                            controller: subjectText,
                             decoration: InputDecoration(
-                                border: UnderlineInputBorder( ) ,
-                                filled: true ,
-                                icon: Icon( Icons.chat ) ,
-                                labelText: "Asunto" ,
-                                hintText: "Escribe el asunto de la reunión"
-                            ) ,
-                          ) ,
+                                border: UnderlineInputBorder(),
+                                filled: true,
+                                icon: Icon(Icons.chat),
+                                labelText: "Asunto",
+                                hintText: "Escribe el asunto de la reunión"),
+                          ),
                           SizedBox(
-                            height: 10.0 ,
-                          ) ,
+                            height: 10.0,
+                          ),
                           TextField(
-                            textCapitalization: TextCapitalization.words ,
-                            controller: nameText ,
+                            textCapitalization: TextCapitalization.words,
+                            controller: nameText,
                             decoration: InputDecoration(
-                                border: UnderlineInputBorder( ) ,
+                                border: UnderlineInputBorder(),
                                 labelText: user.email,
                                 enabled: false,
-                                filled: true ,
-                                icon: Icon( Icons.person ) ,
-                                hintText: "Ingresa tu nombre"
-
-                            ) ,
-                          ) ,
+                                filled: true,
+                                icon: Icon(Icons.person),
+                                hintText: "Ingresa tu nombre"),
+                          ),
                           SizedBox(
-                            height: 10.0 ,
-                          ) ,
+                            height: 10.0,
+                          ),
                           TextField(
-                            textCapitalization: TextCapitalization.words ,
-                            controller: emailText ,
-                            keyboardType: TextInputType.emailAddress ,
+                            textCapitalization: TextCapitalization.words,
+                            controller: emailText,
+                            keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
-                              filled: true ,
-                              border: UnderlineInputBorder( ) ,
+                              filled: true,
+                              border: UnderlineInputBorder(),
                               labelText: user.email,
                               labelStyle: TextStyle(color: Colors.black),
                               enabled: false,
-                              icon: Icon( Icons.mail ) ,
-                              hintText: "Ingresa tu correo" ,
-
-                            ) ,
-                          ) ,
-
+                              icon: Icon(Icons.mail),
+                              hintText: "Ingresa tu correo",
+                            ),
+                          ),
                           CheckboxListTile(
-                            title: Text( "Solo Audio" ) ,
-                            value: isAudioOnly ,
-                            onChanged: _onAudioOnlyChanged ,
-                          ) ,
-
+                            title: Text("Solo Audio"),
+                            value: isAudioOnly,
+                            onChanged: _onAudioOnlyChanged,
+                          ),
                           CheckboxListTile(
-                            title: Text( "Audio Apagado" ) ,
-                            value: isAudioMuted ,
-                            onChanged: _onAudioMutedChanged ,
-                          ) ,
-
+                            title: Text("Audio Apagado"),
+                            value: isAudioMuted,
+                            onChanged: _onAudioMutedChanged,
+                          ),
                           CheckboxListTile(
-                            title: Text( "Video Apagado" ) ,
-                            value: isVideoMuted ,
-                            onChanged: _onVideoMutedChanged ,
-                          ) ,
+                            title: Text("Video Apagado"),
+                            value: isVideoMuted,
+                            onChanged: _onVideoMutedChanged,
+                          ),
                           Divider(
-                            height: 48.0 ,
-                            thickness: 2.0 ,
-                          ) ,
+                            height: 48.0,
+                            thickness: 2.0,
+                          ),
                           RaisedButton(
                             onPressed: () {
-                              _joinMeeting( );
-                            } ,
+                              _joinMeeting();
+                            },
                             child: Text(
-                              "Unirse a la reunión" ,
-                              style: TextStyle( color: Colors.white ) ,
-                            ) ,
-                            color: Theme
-                                .of( context )
-                                .primaryColor ,
+                              "Unirse a la reunión",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            color: Theme.of(context).primaryColor,
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular( 8.0 ) ,
-                            ) ,
-                          ) ,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
                           SizedBox(
-                            height: 48.0 ,
-                          ) ,
-                        ] ,
-                      ) ,
-                    ) ,
-                  ) ,
-                ) ,
-              ) ,
+                            height: 48.0,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             );
         }
-      } ,
+      },
     );
   }
-
-
-
-
 
   _onAudioOnlyChanged(bool value) {
     setState(() {
@@ -378,7 +351,7 @@ class _ChatPageState extends State<ChatPage> {
 
   _joinMeeting() async {
     String serverUrl =
-    serverText.text?.trim()?.isEmpty ?? "" ? null : serverText.text;
+        serverText.text?.trim()?.isEmpty ?? "" ? null : serverText.text;
 
     try {
       var options = JitsiMeetingOptions()

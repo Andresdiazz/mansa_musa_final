@@ -1,28 +1,26 @@
-import 'package:mansamusaapp/Games/par/model/tile_model.dart';
+import '../model/tile_model.dart';
 
-   
 String selectedTile = "";
-int selectedIndex ;
+int selectedIndex;
 bool selected = true;
 int points = 0;
 
 List<TileModel> myPairs = new List<TileModel>();
 List<bool> clicked = new List<bool>();
 
-//listado de los clicks 
-List<bool> getClicked(){
+//listado de los clicks
+List<bool> getClicked() {
   List<bool> yoClicked = new List<bool>();
   List<TileModel> myairs = new List<TileModel>();
   myairs = getPairs();
-  for(int i=0;i<myairs.length;i++){
+  for (int i = 0; i < myairs.length; i++) {
     yoClicked[i] = false;
   }
   return yoClicked;
 }
 
-//Listado de las imagenes 
-List<TileModel>  getPairs(){
-
+//Listado de las imagenes
+List<TileModel> getPairs() {
   List<TileModel> pairs = new List<TileModel>();
 
   TileModel tileModel = new TileModel();
@@ -84,9 +82,9 @@ List<TileModel>  getPairs(){
 
   return pairs;
 }
-//Listado de la imagen  question 
-List<TileModel>  getQuestionPairs(){
 
+//Listado de la imagen  question
+List<TileModel> getQuestionPairs() {
   List<TileModel> pairs = new List<TileModel>();
 
   TileModel tileModel = new TileModel();

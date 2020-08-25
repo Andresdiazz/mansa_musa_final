@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:mansamusaapp/Classes/ui/screens/bachillerato/home_page.dart';
+
+import '../../Classes/ui/screens/bachillerato/home_page.dart';
 
 class resultpage extends StatefulWidget {
   int marks;
-  resultpage({Key key , @required this.marks}) : super(key : key);
+  resultpage({Key key, @required this.marks}) : super(key: key);
   @override
   _resultpageState createState() => _resultpageState(marks);
 }
 
 class _resultpageState extends State<resultpage> {
-
   List<String> images = [
     "images/success.png",
     "images/good.png",
@@ -20,14 +20,15 @@ class _resultpageState extends State<resultpage> {
   String image;
 
   @override
-  void initState(){
-    if(marks < 20){
+  void initState() {
+    if (marks < 20) {
       image = images[2];
-      message = "Deberias intentarlo nuevamente\n" + "Tu puntaje fue $marks puntos";
-    }else if(marks < 35){
+      message =
+          "Deberias intentarlo nuevamente\n" + "Tu puntaje fue $marks puntos";
+    } else if (marks < 35) {
       image = images[1];
       message = "Puedes hacerlo mejor\n" + "Tu puntaje fue $marks puntos";
-    }else{
+    } else {
       image = images[0];
       message = "Lo hiciste muy bien\n" + "Tu puntaje fue $marks puntos";
     }
@@ -67,24 +68,23 @@ class _resultpageState extends State<resultpage> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 5.0,
-                        horizontal: 15.0,
-                      ),
-                      child: Center(
-                      child: Text(
-                        message,
-                        style: TextStyle(
-                          fontSize: 18.0,
+                        padding: EdgeInsets.symmetric(
+                          vertical: 5.0,
+                          horizontal: 15.0,
                         ),
-                        textAlign: TextAlign.center,
-                      ),
-                    )
-                    ),
+                        child: Center(
+                          child: Text(
+                            message,
+                            style: TextStyle(
+                              fontSize: 18.0,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
                   ],
                 ),
               ),
-            ),            
+            ),
           ),
           Expanded(
             flex: 4,
@@ -92,7 +92,7 @@ class _resultpageState extends State<resultpage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 OutlineButton(
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (context) => HomePage(),
                     ));

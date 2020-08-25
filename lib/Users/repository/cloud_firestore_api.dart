@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:mansamusaapp/Users/model/user.dart';
 
-class CloudFirestoreAPI{
+import '../model/user.dart';
 
+class CloudFirestoreAPI {
   final String USERS = "users";
 
   final Firestore _db = Firestore.instance;

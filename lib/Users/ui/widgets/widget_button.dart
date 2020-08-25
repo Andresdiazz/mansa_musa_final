@@ -4,20 +4,22 @@ class WidgetButton extends StatelessWidget {
   final VoidCallback _onPressed;
   String title;
 
-  WidgetButton({Key key , VoidCallback onPressed, this.title})
-      :_onPressed = onPressed,
+  WidgetButton({Key key, VoidCallback onPressed, this.title})
+      : _onPressed = onPressed,
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: BorderRadius.circular(50.0),
       ),
       onPressed: _onPressed,
       color: Colors.white,
-      child: Text(title),
+      child: Text(title,
+          style: TextStyle(
+              color: Theme.of(context).primaryColor,
+              fontWeight: FontWeight.bold)),
     );
-
   }
 }

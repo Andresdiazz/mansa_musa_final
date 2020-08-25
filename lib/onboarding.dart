@@ -2,10 +2,9 @@ import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:mansamusaapp/Users/bloc/bloc_user.dart';
 
 import 'Classes/ui/screens/selection_page.dart';
-import 'Users/ui/screens/login_form.dart';
+import 'Users/bloc/bloc_user.dart';
 import 'Users/ui/screens/login_screen.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -56,12 +55,7 @@ class OnboardingPageState extends State<OnboardingPage>
         if (!snapshot.hasData) {
           return Onboard();
         } else {
-          return SelectionPage(
-            colorAppBar: Color(0xff002E62),
-            colorBackground: Color(0xff002E62),
-            logo: AssetImage("images/logos/logo-blanco.png"),
-            color: Colors.white,
-          );
+          return SelectionPage();
         }
       },
     );
@@ -74,16 +68,15 @@ class OnboardingPageState extends State<OnboardingPage>
       body: OrientationBuilder(builder: (context, orientation) {
         if (orientation == Orientation.portrait) {
           return ColorfulSafeArea(
-            color: Colors.transparent,
+            color: Colors.black,
             child: AnnotatedRegion<SystemUiOverlayStyle>(
               value: SystemUiOverlayStyle.light,
               child: Container(
                 height: media.height * 2,
                 decoration: BoxDecoration(
-                    gradient: RadialGradient(colors: [
-                  Theme.of(context).primaryColor,
-                  Theme.of(context).accentColor
-                ], radius: 1.0)),
+                    image: DecorationImage(
+                        image: AssetImage("images/fondo.png"),
+                        fit: BoxFit.cover)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -108,15 +101,15 @@ class OnboardingPageState extends State<OnboardingPage>
                                     },
                                     child: Text(
                                       "Siguiente",
-                                      style:
-                                          TextStyle(color: Colors.white, fontSize: 15),
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 15),
                                     ),
                                   ),
                                   InkWell(
-                                      onTap: () {},
-                                      child: Text("",
-                                          style: TextStyle(color: Colors.white)),
-                                    )
+                                    onTap: () {},
+                                    child: Text("",
+                                        style: TextStyle(color: Colors.white)),
+                                  )
                                 ],
                               ),
                             ),
@@ -332,7 +325,7 @@ class OnboardingPageState extends State<OnboardingPage>
                     _currentPage != _numPages - 1
                         ? Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 25, vertical: 30),
+                                horizontal: 50, vertical: 30),
                             child: RaisedButton(
                               onPressed: () => Navigator.push(
                                   context,
@@ -343,13 +336,13 @@ class OnboardingPageState extends State<OnboardingPage>
                                 style: TextStyle(fontSize: 18),
                               ),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(50),
                               ),
                             ),
                           )
                         : Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 25, vertical: 30),
+                                horizontal: 50, vertical: 30),
                             child: RaisedButton(
                               onPressed: () => Navigator.push(
                                   context,
@@ -360,7 +353,7 @@ class OnboardingPageState extends State<OnboardingPage>
                                 style: TextStyle(fontSize: 18),
                               ),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                                borderRadius: BorderRadius.circular(50),
                               ),
                             ),
                           )
@@ -391,33 +384,33 @@ class OnboardingPageState extends State<OnboardingPage>
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
                           Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 20),
-                              child: Container(
-                                alignment: Alignment.topLeft,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        _pageController.nextPage(
-                                            duration: Duration(milliseconds: 500),
-                                            curve: Curves.ease);
-                                      },
-                                      child: Text(
-                                        "Siguiente",
-                                        style:
-                                            TextStyle(color: Colors.white, fontSize: 15),
-                                      ),
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Container(
+                              alignment: Alignment.topLeft,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  InkWell(
+                                    onTap: () {
+                                      _pageController.nextPage(
+                                          duration: Duration(milliseconds: 500),
+                                          curve: Curves.ease);
+                                    },
+                                    child: Text(
+                                      "Siguiente",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 15),
                                     ),
-                                    InkWell(
-                                        onTap: () {},
-                                        child: Text("",
-                                            style: TextStyle(color: Colors.white)),
-                                      )
-                                  ],
-                                ),
+                                  ),
+                                  InkWell(
+                                    onTap: () {},
+                                    child: Text("",
+                                        style: TextStyle(color: Colors.white)),
+                                  )
+                                ],
                               ),
                             ),
+                          ),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Container(
@@ -462,8 +455,7 @@ class OnboardingPageState extends State<OnboardingPage>
                             Center(
                               child: SingleChildScrollView(
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Center(
@@ -560,8 +552,8 @@ class OnboardingPageState extends State<OnboardingPage>
                                                         Text(
                                                           "Cancela cuando quieras",
                                                           style: TextStyle(
-                                                              color: Colors
-                                                                  .white,
+                                                              color:
+                                                                  Colors.white,
                                                               fontSize: 15.0),
                                                         ),
                                                       ],
@@ -602,8 +594,7 @@ class OnboardingPageState extends State<OnboardingPage>
                                                       Text(
                                                         "Contenido HD y 4K",
                                                         style: TextStyle(
-                                                            color:
-                                                                Colors.white,
+                                                            color: Colors.white,
                                                             fontSize: 15.0),
                                                         textAlign:
                                                             TextAlign.left,

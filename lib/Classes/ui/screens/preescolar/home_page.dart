@@ -10,14 +10,23 @@ import 'components/content_scrollJugando.dart';
 import 'components/content_scrollTemas.dart';
 import 'searchBachillerato.dart';
 
-class HomePage extends StatefulWidget {
+class HomePagePreescolar extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePagePreescolarState createState() => _HomePagePreescolarState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePagePreescolarState extends State<HomePagePreescolar> {
   @override
   Widget build(BuildContext context) {
+    var iconButton = IconButton(
+      icon: Icon(MansaIcon.perfil),
+      onPressed: () {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => SelectionPage()));
+      },
+      color: Colors.white,
+      iconSize: 30,
+    );
     return Scaffold(
       //backgroundColor: Colors.white,
       appBar: AppBar(
@@ -32,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => SearchBachillerato()));
+                        builder: (context) => SearchPreescolar()));
               }),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 4),
@@ -50,7 +59,9 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(MansaIcon.chat),
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => Chat()));
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ChatPreescolar()));
                 },
                 color: Colors.white,
                 iconSize: 30,
@@ -72,15 +83,7 @@ class _HomePageState extends State<HomePage> {
                       end: Alignment.bottomCenter),
                   border: Border.all(color: Colors.white, width: 2),
                   borderRadius: BorderRadius.circular(50)),
-              child: IconButton(
-                icon: Icon(MansaIcon.perfil),
-                onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => SelectionPage()));
-                },
-                color: Colors.white,
-                iconSize: 30,
-              ),
+              child: iconButton,
             ),
           ),
           SizedBox(
@@ -91,33 +94,42 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("images/fondo.png"), fit: BoxFit.cover)),
-        child: ListView(
-          children: <Widget>[
-            Principal(),
-            SizedBox(height: 10.0),
-            ContentScrollEje(
-              title: 'Eje Temático',
-              imageHeight: 140.0,
-              imageWidth: 183.0,
-              padding: 15,
-              paddingContainer: 0,
+                image: AssetImage("images/fondo.png"),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.linearToSrgbGamma())),
+        child: Stack(
+          children: [
+            Container(
+              color: Colors.white38,
             ),
-            SizedBox(height: 10.0),
-            ContentScrollTema(
-              title: 'Temas de Interés',
-              imageHeight: 140.0,
-              imageWidth: 183.0,
-              padding: 15,
-              paddingContainer: 0,
-            ),
-            SizedBox(height: 10.0),
-            ContentScrolJugando(
-              title: 'Aprende Jugando',
-              imageHeight: 140.0,
-              imageWidth: 183.0,
-              padding: 15,
-              paddingContainer: 0,
+            ListView(
+              children: <Widget>[
+                Principal(),
+                SizedBox(height: 10.0),
+                ContentScrollEje(
+                  title: 'Eje Temático',
+                  imageHeight: 140.0,
+                  imageWidth: 183.0,
+                  padding: 15,
+                  paddingContainer: 0,
+                ),
+                SizedBox(height: 10.0),
+                ContentScrollTema(
+                  title: 'Temas de Interés',
+                  imageHeight: 140.0,
+                  imageWidth: 183.0,
+                  padding: 15,
+                  paddingContainer: 0,
+                ),
+                SizedBox(height: 10.0),
+                ContentScrolJugando(
+                  title: 'Aprende Jugando',
+                  imageHeight: 140.0,
+                  imageWidth: 183.0,
+                  padding: 15,
+                  paddingContainer: 0,
+                ),
+              ],
             ),
           ],
         ),

@@ -10,12 +10,12 @@ import 'components/content_scrollJugando.dart';
 import 'components/content_scrollTemas.dart';
 import 'searchBachillerato.dart';
 
-class HomePage extends StatefulWidget {
+class HomePagePrimaria extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePagePrimariaState createState() => _HomePagePrimariaState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePagePrimariaState extends State<HomePagePrimaria> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,10 +29,8 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               icon: Icon(MansaIcon.search),
               onPressed: () {
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SearchBachillerato()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => SearchPrimaria()));
               }),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 4),
@@ -49,8 +47,8 @@ class _HomePageState extends State<HomePage> {
               child: IconButton(
                 icon: Icon(MansaIcon.chat),
                 onPressed: () {
-                  Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => Chat()));
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => ChatPrimaria()));
                 },
                 color: Colors.white,
                 iconSize: 30,
@@ -91,33 +89,42 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("images/fondo.png"), fit: BoxFit.cover)),
-        child: ListView(
-          children: <Widget>[
-            Principal(),
-            SizedBox(height: 10.0),
-            ContentScrollEje(
-              title: 'Eje Temático',
-              imageHeight: 140.0,
-              imageWidth: 183.0,
-              padding: 15,
-              paddingContainer: 0,
+          image: AssetImage("images/fondo.png"),
+          fit: BoxFit.cover,
+        )),
+        child: Stack(
+          children: [
+            Container(
+              color: Colors.white60,
             ),
-            SizedBox(height: 10.0),
-            ContentScrollTema(
-              title: 'Temas de Interés',
-              imageHeight: 140.0,
-              imageWidth: 183.0,
-              padding: 15,
-              paddingContainer: 0,
-            ),
-            SizedBox(height: 10.0),
-            ContentScrolJugando(
-              title: 'Aprende Jugando',
-              imageHeight: 140.0,
-              imageWidth: 183.0,
-              padding: 15,
-              paddingContainer: 0,
+            ListView(
+              children: <Widget>[
+                Principal(),
+                SizedBox(height: 10.0),
+                ContentScrollEje(
+                  title: 'Eje Temático',
+                  imageHeight: 140.0,
+                  imageWidth: 183.0,
+                  padding: 15,
+                  paddingContainer: 0,
+                ),
+                SizedBox(height: 10.0),
+                ContentScrollTema(
+                  title: 'Temas de Interés',
+                  imageHeight: 140.0,
+                  imageWidth: 183.0,
+                  padding: 15,
+                  paddingContainer: 0,
+                ),
+                SizedBox(height: 10.0),
+                ContentScrolJugando(
+                  title: 'Aprende Jugando',
+                  imageHeight: 140.0,
+                  imageWidth: 183.0,
+                  padding: 15,
+                  paddingContainer: 0,
+                ),
+              ],
             ),
           ],
         ),

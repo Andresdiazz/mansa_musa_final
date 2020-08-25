@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../preescolar/thirdPage.dart';
+import '../bachillerato/thirdPage.dart';
 import 'components/searchService.dart';
 import 'home_page.dart';
 
-class SearchBachillerato extends StatefulWidget {
+class SearchPreescolar extends StatefulWidget {
   @override
-  _SearchBachilleratoState createState() => _SearchBachilleratoState();
+  _SearchPreescolarState createState() => _SearchPreescolarState();
 }
 
-class _SearchBachilleratoState extends State<SearchBachillerato> {
+class _SearchPreescolarState extends State<SearchPreescolar> {
   var queryResultSet = [];
   var tempSearchStore = [];
 
@@ -108,8 +108,10 @@ class _SearchBachilleratoState extends State<SearchBachillerato> {
                     onPressed: () {
                       FocusScope.of(context).requestFocus(new FocusNode());
                       clearTextInput();
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomePagePreescolar()));
                     },
                     child: Text(
                       "Cancelar",

@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import '../../preescolar/model/clases_model.dart';
+import '../../bachillerato/model/clases_model.dart';
+import 'content_scroll.dart';
 import 'content_scrollJugando.dart';
 import 'content_scrollRelacionados.dart';
 import 'content_scrollTemas.dart';

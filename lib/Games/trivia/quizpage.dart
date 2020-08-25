@@ -3,7 +3,10 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mansamusaapp/Games/trivia/resultpage.dart';
+
+import 'package:flutter_beep/flutter_beep.dart';
+
+import 'resultpage.dart';
 
 class getjson extends StatelessWidget {
   // accept the langname as a parameter
@@ -93,19 +96,19 @@ class _quizpageState extends State<quizpage> {
   // to create the array elements randomly use the dart:math module
   // -----     CODE TO GENERATE ARRAY RANDOMLY
 
-  genrandomarray(){
+  genrandomarray() {
     var distinctIds = [];
     var rand = new Random();
-      for (int i = 0; ;) {
+    for (int i = 0;;) {
       distinctIds.add(rand.nextInt(80));
-        random_array = distinctIds.toSet().toList();
-        if(random_array.length < 10){
-          continue;
-        }else{
-          break;
-        }
+      random_array = distinctIds.toSet().toList();
+      if (random_array.length < 10) {
+        continue;
+      } else {
+        break;
       }
-      print(random_array);
+    }
+    print(random_array);
   }
 
   //   var random_array;
@@ -189,10 +192,12 @@ class _quizpageState extends State<quizpage> {
       marks = marks + 5;
       // changing the color variable to be green
       colortoshow = right;
+      FlutterBeep.playSysSound(43);
     } else {
       // just a print sattement to check the correct working
       // debugPrint(mydata[2]["1"] + " is equal to " + mydata[1]["1"][k]);
       colortoshow = wrong;
+      FlutterBeep.beep(false);
     }
     setState(() {
       // applying the changed color to the particular button that was selected
@@ -211,12 +216,15 @@ class _quizpageState extends State<quizpage> {
         horizontal: 20.0,
       ),
       child: MaterialButton(
-        onPressed: () => checkanswer(k),
+        onPressed: () => {
+          checkanswer(k),
+          //FlutterBeep.playSysSound(43)
+        },
         child: Text(
           mydata[1][i.toString()][k],
           style: TextStyle(
             color: Colors.white,
-            fontSize: 16.0,
+            fontSize: 12.0,
           ),
           maxLines: 2,
         ),
@@ -259,27 +267,27 @@ class _quizpageState extends State<quizpage> {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage("images/JUEGO-PREGUNTAS_.jpg"), fit: BoxFit.fill)
-          ),
+              image: DecorationImage(
+                  image: AssetImage("images/JUEGO-PREGUNTAS_.jpg"),
+                  fit: BoxFit.fill)),
           child: Column(
             children: <Widget>[
               Expanded(
                 flex: 5,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 80),
+                  padding: EdgeInsets.symmetric(horizontal: 95),
                   alignment: Alignment.bottomLeft,
                   child: Text(
                     mydata[0][i.toString()],
                     style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold
-                    ),
+                        fontSize: 16.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
               Expanded(
-                flex: 7,
+                flex: 6,
                 child: Container(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 90),

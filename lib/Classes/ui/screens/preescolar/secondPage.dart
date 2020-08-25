@@ -1,70 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:mansamusaapp/Classes/ui/screens/primaria/tab_primaria.dart';
 
+import 'components/tab_ejeTematico.dart';
 
-class SecondPagePrimaria extends StatefulWidget {
+class SecondPage extends StatefulWidget {
+  final String id;
 
   final String title;
   final String img;
   final String description;
   final String subtitle;
 
-
-
-  SecondPagePrimaria({this.title,this.img,this.description,this.subtitle});
+  SecondPage({this.title, this.img, this.description, this.subtitle, this.id});
 
   @override
-  _SecondPagePrimariaState createState() => _SecondPagePrimariaState();
+  _SecondPageState createState() => _SecondPageState();
 }
 
-class _SecondPagePrimariaState extends State<SecondPagePrimaria> {
+class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: DefaultTabController(
         length: 1,
         child: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return [
               SliverAppBar(
-                title: Text(widget.title.toUpperCase()),
+                //title: Text(widget.title.toUpperCase()),
                 actions: [
                   Padding(
                     padding: const EdgeInsets.only(right: 10),
-                    child: InkWell(onTap: (){
-                      print("play buton");
-                    },child: Icon(Icons.image_aspect_ratio,size: 20,)),
+                    child: InkWell(
+                        onTap: () {
+                          print("play buton");
+                        },
+                        child: Icon(
+                          Icons.image_aspect_ratio,
+                          size: 20,
+                        )),
                   )
-
                 ],
                 expandedHeight: 230,
                 flexibleSpace: Container(
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: NetworkImage(widget.img),
-                          fit: BoxFit.cover
-                      )
-                  ),
+                          image: NetworkImage(widget.img), fit: BoxFit.fill)),
                   child: Container(
                     color: Colors.black.withOpacity(.5),
                   ),
                 ),
                 pinned: true,
                 bottom: TabBar(
-                    labelColor: Colors.black,
-                    indicatorColor: Colors.black,
+                    labelColor: Colors.white,
+                    indicatorColor: Color(0xffAC7830),
                     indicatorWeight: 3,
-
-
                     tabs: <Widget>[
                       Tab(
-                        child: Text("", style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold
-                        ),),
+                        child: Text(
+                          "",
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold),
+                        ),
                       ),
-
                     ]),
               )
             ];
@@ -72,23 +69,17 @@ class _SecondPagePrimariaState extends State<SecondPagePrimaria> {
           body: TabBarView(children: <Widget>[
             Container(
               decoration: BoxDecoration(
-                  gradient: RadialGradient(
-                      colors: [
-                        Colors.white,
-                        Colors.white
-                      ],
-                      radius: 1.0
-                  )
-              ),
-              child: TabPrimariaWidget(
+                  image: DecorationImage(
+                      image: AssetImage("images/fondo.png"),
+                      fit: BoxFit.cover)),
+              child: TabEjeWidget(
+                id: widget.id,
                 title: widget.title,
                 description: widget.description,
                 subtitle: widget.subtitle,
               ),
             ),
-
           ]),
-
         ),
       ),
     );

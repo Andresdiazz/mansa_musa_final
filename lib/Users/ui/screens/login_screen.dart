@@ -1,22 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:mansamusaapp/Users/bloc/bloc_user.dart';
-import 'package:mansamusaapp/Users/ui/screens/login_form.dart';
 
+import '../../bloc/bloc_user.dart';
+import 'login_form.dart';
 
 class LoginScreen extends StatelessWidget {
-
   UserBloc userBloc;
 
   @override
   Widget build(BuildContext context) {
     userBloc = BlocProvider.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text(""), elevation: 0,
-      ),
-      body:  Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
-            body: LoginForm()),
-      );
+      body: Scaffold(
+          //backgroundColor: Theme.of(context).primaryColor,
+          body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/fondo.png"), fit: BoxFit.cover)),
+          ),
+          AppBar(
+            title: Text(""),
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+          ),
+          Center(child: LoginForm())
+        ],
+      )),
+    );
   }
 }
