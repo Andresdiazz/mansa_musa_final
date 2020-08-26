@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mansamusaapp/Classes/ui/screens/bachillerato/VideoPage.dart';
 
 import 'content_scroll.dart';
 import 'content_scrollJugando.dart';
@@ -26,6 +27,8 @@ class _TabDescriptionWidgetState extends State<TabDescriptionWidget> {
           child: RaisedButton(
             onPressed: () {
               print("play video");
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => VideoPage()));
             },
             child: Text(
               "Reproducir video",

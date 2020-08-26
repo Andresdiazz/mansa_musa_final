@@ -70,7 +70,7 @@ class ContentScrollEje extends StatelessWidget {
                     return InkWell(
                       onTap: () {
                         print(doc.documentID);
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (_) => SecondPage(

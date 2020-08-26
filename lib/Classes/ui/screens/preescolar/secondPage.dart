@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mansamusaapp/Classes/ui/screens/bachillerato/searchBachillerato.dart';
+import 'package:mansamusaapp/Classes/ui/screens/preescolar/home_page.dart';
 
+import '../../../../mansa_icon_icons.dart';
+import '../selection_page.dart';
 import 'components/tab_ejeTematico.dart';
 
 class SecondPage extends StatefulWidget {
@@ -20,6 +24,76 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Image.asset(
+          "images/logos/logo-blanco.png",
+          height: 70,
+        ),
+        actions: [
+          IconButton(
+              icon: Icon(MansaIcon.search),
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SearchBachillerato()));
+              }),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [Colors.blue, Theme.of(context).primaryColor],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter),
+                  border: Border.all(color: Colors.white, width: 2),
+                  borderRadius: BorderRadius.circular(50)),
+              child: IconButton(
+                icon: Icon(MansaIcon.home),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomePagePreescolar()));
+                },
+                color: Colors.white,
+                iconSize: 30,
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [Colors.amber[200], Colors.orange[900]],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter),
+                  border: Border.all(color: Colors.white, width: 2),
+                  borderRadius: BorderRadius.circular(50)),
+              child: IconButton(
+                icon: Icon(MansaIcon.perfil),
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => SelectionPage()));
+                },
+                color: Colors.white,
+                iconSize: 30,
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 10,
+          )
+        ],
+      ),
       body: DefaultTabController(
         length: 1,
         child: NestedScrollView(

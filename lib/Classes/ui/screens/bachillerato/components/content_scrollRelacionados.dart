@@ -6,7 +6,6 @@ import '../secondPage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ContentScrollRelacionTematico extends StatelessWidget {
-
   final String id;
   final String title;
   final double imageHeight;
@@ -14,14 +13,13 @@ class ContentScrollRelacionTematico extends StatelessWidget {
   final double padding;
   final double paddingContainer;
 
-  ContentScrollRelacionTematico({
-    this.id,
-    this.title,
-    this.imageHeight,
-    this.imageWidth,
-    this.padding,
-    this.paddingContainer
-  });
+  ContentScrollRelacionTematico(
+      {this.id,
+      this.title,
+      this.imageHeight,
+      this.imageWidth,
+      this.padding,
+      this.paddingContainer});
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +42,27 @@ class ContentScrollRelacionTematico extends StatelessWidget {
               ),
               Expanded(
                   child: Container(
-                    height: 1.5,
-                    decoration: BoxDecoration(color: Colors.white),
-                  )),
+                height: 1.5,
+                decoration: BoxDecoration(color: Colors.white),
+              )),
             ],
           ),
         ),
         Container(
             height: imageHeight,
             child: StreamBuilder(
-                stream: Firestore.instance.collection('bachillerato').document('principal').collection('tematico').document(id).collection('relacionTematico').snapshots(),
-                builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
-                  if (!snapshot.hasData) {  return Text("loading...."); }
+                stream: Firestore.instance
+                    .collection('bachillerato')
+                    .document('principal')
+                    .collection('tematico')
+                    .document(id)
+                    .collection('relacionTematico')
+                    .snapshots(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (!snapshot.hasData) {
+                    return Text("loading....");
+                  }
                   int length = snapshot.data.documents.length;
 
                   return ListView.builder(
@@ -64,18 +71,20 @@ class ContentScrollRelacionTematico extends StatelessWidget {
                     itemCount: length,
                     itemBuilder: (_, int index) {
                       //Portada port = portada[index];
-                      final DocumentSnapshot doc = snapshot.data.documents[index];
+                      final DocumentSnapshot doc =
+                          snapshot.data.documents[index];
                       return InkWell(
-                        onTap: (){
+                        onTap: () {
                           print(doc.documentID);
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (_) => relacionadosPage(
-                                id: id,
-                                title: doc.data['title'],
-                                description: doc.data['description'],
-                                img:doc.data['img'],
-                              )
-                          ));
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => relacionadosPage(
+                                        id: id,
+                                        title: doc.data['title'],
+                                        description: doc.data['description'],
+                                        img: doc.data['img'],
+                                      )));
                         },
                         child: Container(
                           margin: EdgeInsets.symmetric(
@@ -95,20 +104,16 @@ class ContentScrollRelacionTematico extends StatelessWidget {
                             ],
                           ),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(5.0),
-                            child: CachedNetworkImage(
-                              imageUrl: "${doc.data["img"]}",
-                              fit: BoxFit.fill,
-                            )
-                          ),
+                              borderRadius: BorderRadius.circular(5.0),
+                              child: CachedNetworkImage(
+                                imageUrl: "${doc.data["img"]}",
+                                fit: BoxFit.fill,
+                              )),
                         ),
                       );
                     },
                   );
-
-                }
-            )
-        )
+                }))
       ],
     );
   }
