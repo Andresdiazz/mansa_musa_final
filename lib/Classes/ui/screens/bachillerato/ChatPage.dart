@@ -9,17 +9,8 @@ class Chat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: [
-        Container(
-          height: double.infinity,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("images/fondo.png"), fit: BoxFit.cover)),
-          child: Center(child: ChatPage()),
-        ),
-        AppBar(
-          backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          //backgroundColor: Colors.transparent,
           title: Image.asset(
             "images/logos/logo-blanco.png",
             height: 70,
@@ -85,7 +76,12 @@ class Chat extends StatelessWidget {
             )
           ],
         ),
-      ],
-    ));
+        body: Container(
+          height: double.infinity,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/fondo.png"), fit: BoxFit.cover)),
+          child: Center(child: ChatPage()),
+        ));
   }
 }

@@ -5,6 +5,7 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import '../../../Users/bloc/bloc_user.dart';
 import '../../../mansa_icon_icons.dart';
 import '../../../onboarding.dart';
+import 'bachillerato/ChatPage.dart';
 import 'chat/chat_page.dart';
 
 class SelectionPage extends StatefulWidget {
@@ -60,7 +61,7 @@ class _SelectionPageState extends State<SelectionPage> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ChatPage()));
+                                      builder: (context) => Chat()));
                             },
                             color: Colors.white,
                             iconSize: 30,
