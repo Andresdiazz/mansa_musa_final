@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../mansa_icon_icons.dart';
 import '../selection_page.dart';
 import 'ChatPage.dart';
+import 'components/Banner.dart';
 import 'components/content_scroll.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -94,7 +95,10 @@ class _HomePageState extends State<HomePage> {
                 image: AssetImage("images/fondo.png"), fit: BoxFit.cover)),
         child: ListView(
           children: <Widget>[
-            Principal(),
+            BannerPage(
+              imageHeight: 190,
+              imageWidth: MediaQuery.of(context).size.width,
+            ),
             SizedBox(height: 10.0),
             ContentScrollEje(
               title: 'Eje Temático',
