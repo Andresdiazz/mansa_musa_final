@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:mansamusaapp/Users/bloc/bloc_user.dart';
 
-import '../../../Users/bloc/bloc_user.dart';
 import '../../../mansa_icon_icons.dart';
 import '../../../onboarding.dart';
 import 'bachillerato/ChatPage.dart';
-import 'chat/chat_page.dart';
 
 class SelectionPage extends StatefulWidget {
   @override
@@ -118,7 +117,6 @@ class _SelectionPageState extends State<SelectionPage> {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.pop(context);
                               Navigator.of(context)
                                   .pushReplacementNamed('/HomePagePreescolar');
                             },
@@ -145,7 +143,6 @@ class _SelectionPageState extends State<SelectionPage> {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.pop(context);
                               Navigator.of(context)
                                   .pushReplacementNamed('/HomePagePrimaria');
                             },
